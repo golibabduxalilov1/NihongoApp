@@ -7,6 +7,7 @@ import '../../../core/constants/app_typography.dart';
 import '../flashcard/flashcard_screen.dart';
 import '../speaking/speaking_practice_screen.dart';
 import '../writing/writing_practice_screen.dart';
+import '../listening/listening_practice_screen.dart';
 import '../practice/targeted_practice_screen.dart';
 
 /// Barcha erkin mashq turlarini birlashtiruvchi markaz:
@@ -99,9 +100,33 @@ class PracticeHubScreen extends ConsumerWidget {
               Navigator.push(context, MaterialPageRoute(builder: (_) => const WritingPracticeScreen()));
             },
           ),
+          _SkillTile(
+            icon: Icons.headphones_rounded,
+            title: 'Eshitish',
+            subtitle: "So'zni tinglang, tarjimasini tanlang",
+            color: AppColors.mint,
+            iconColor: AppColors.green,
+            onTap: () => _openListeningPractice(context, ref),
+          ),
         ],
       ),
     );
+  }
+
+  Future<void> _openListeningPractice(BuildContext context, WidgetRef ref) async {
+    final lessons = await ref.read(lessonsListProvider.future);
+    if (lessons.isEmpty) {
+      if (context.mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text("Hozircha dars yo'q")),
+        );
+      }
+      return;
+    }
+    final lessonId = lessons.first.id;
+    if (context.mounted) {
+      Navigator.push(context, MaterialPageRoute(builder: (_) => ListeningPracticeScreen(lessonId: lessonId)));
+    }
   }
 
   Future<void> _openVocabPractice(BuildContext context, WidgetRef ref) async {

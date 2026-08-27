@@ -22,8 +22,8 @@ dependencies:
   # Audio (talaffuz uchun)
   just_audio: ^0.9.40
 
-  # Gapirish mashqi (shadowing) - ovozni matnga aylantirish
-  speech_to_text: ^7.0.0
+  # Eshitish mashqi (Text-to-Speech) - so'zni ovoz chiqarib o'qish
+  flutter_tts: ^4.2.0
 
   # JSON serializatsiya
   json_annotation: ^4.9.0

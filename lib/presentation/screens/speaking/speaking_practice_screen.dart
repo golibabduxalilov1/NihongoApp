@@ -1,21 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:speech_to_text/speech_to_text.dart' as stt;
 import '../../../domain/entities/speaking_item.dart';
 import '../../providers/repository_providers.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../core/constants/app_typography.dart';
 import '../../../core/utils/phonetic_matcher.dart';
 
-/// Shadowing mashqi: foydalanuvchi namunani eshitadi (yoki matnni o'qiydi),
-/// o'zi takrorlaydi, tizim mikrofon orqali tinglab, taxminiy fonetik
-/// moslikni ko'rsatadi. TZ funksiya 4.
+/// Shadowing mashqi: foydalanuvchi namunani ko'radi/eshitadi, o'zi ovoz
+/// chiqarib takrorlaydi, so'ng o'z fikricha qanday aytganini matn
+/// ko'rinishida kiritadi va tizim taxminiy fonetik moslikni ko'rsatadi.
 ///
-/// Diqqat: speech_to_text qurilmaning o'z nutqni tanish tizimidan
-/// foydalanadi (Android/iOS built-in) — bu internetga serverga ma'lumot
-/// yubormaydi deb kafolatlanmaydi (OS darajasida bo'lishi mumkin), lekin
-/// ilovaning o'zi hech qanday tashqi API'ga so'rov yubormaydi — barcha
-/// taqqoslash (PhoneticMatcher) qurilmada, offline ishlaydi.
+/// ESLATMA: bu vaqtinchalik, mikrofonsiz versiya. To'liq versiyada
+/// (speech_to_text paketi orqali) matn avtomatik tanilishi kerak edi,
+/// lekin bu paket hozirgi CI build muhitida Gradle konfiguratsiya
+/// muammosi berayotgani sababli vaqtincha o'chirilgan. Foydalanuvchi
+/// o'zi eshitgan/aytgan so'zini qo'lda kiritadi, taqqoslash logikasi
+/// (PhoneticMatcher) esa o'zgarishsiz ishlayveradi — faqat kirish usuli
+/// mikrofondan klaviaturaga almashtirilgan. Keyingi bosqichda
+/// speech_to_text qayta faollashtirilganda faqat shu ekranning kirish
+/// qismini o'zgartirish kifoya, qolgan mantiq (baholash, saqlash)
+/// bir xil qoladi.
 class SpeakingPracticeScreen extends ConsumerStatefulWidget {
   final int lessonId;
   final bool kaiwaOnly;
@@ -27,10 +31,7 @@ class SpeakingPracticeScreen extends ConsumerStatefulWidget {
 }
 
 class _SpeakingPracticeScreenState extends ConsumerState<SpeakingPracticeScreen> {
-  final stt.SpeechToText _speech = stt.SpeechToText();
-  bool _speechAvailable = false;
-  bool _isListening = false;
-  String _recognizedText = '';
+  final TextEditingController _controller = TextEditingController();
   double? _score;
   int _currentIndex = 0;
   List<SpeakingItem>? _items;
@@ -38,21 +39,7 @@ class _SpeakingPracticeScreenState extends ConsumerState<SpeakingPracticeScreen>
   @override
   void initState() {
     super.initState();
-    _initSpeech();
     _loadItems();
-  }
-
-  Future<void> _initSpeech() async {
-    _speechAvailable = await _speech.initialize(
-      onError: (error) {
-        if (mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text("Mikrofon xatosi: ${error.errorMsg}")),
-          );
-        }
-      },
-    );
-    if (mounted) setState(() {});
   }
 
   Future<void> _loadItems() async {
@@ -65,50 +52,25 @@ class _SpeakingPracticeScreenState extends ConsumerState<SpeakingPracticeScreen>
 
   @override
   void dispose() {
-    _speech.stop();
+    _controller.dispose();
     super.dispose();
   }
 
-  Future<void> _startListening() async {
-    if (!_speechAvailable) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text("Mikrofonga ruxsat berilmagan yoki qurilmada nutqni tanish mavjud emas")),
-      );
-      return;
-    }
-
-    setState(() {
-      _isListening = true;
-      _recognizedText = '';
-      _score = null;
-    });
-
-    await _speech.listen(
-      localeId: 'ja_JP',
-      onResult: (result) {
-        setState(() => _recognizedText = result.recognizedWords);
-      },
-    );
-  }
-
-  Future<void> _stopListening() async {
-    await _speech.stop();
-    setState(() => _isListening = false);
-
+  Future<void> _checkAnswer() async {
     final item = _items?[_currentIndex];
-    if (item != null && _recognizedText.isNotEmpty) {
-      final score = PhoneticMatcher.similarity(item.promptRomaji ?? item.promptText, _recognizedText);
-      setState(() => _score = score);
+    if (item == null || _controller.text.trim().isEmpty) return;
 
-      final saveAttempt = ref.read(speakingRepositoryProvider);
-      await saveAttempt.saveAttempt(SpeakingAttempt(
-        id: 0,
-        speakingItemId: item.id,
-        recognizedText: _recognizedText,
-        similarityScore: score,
-        attemptedAt: DateTime.now(),
-      ));
-    }
+    final score = PhoneticMatcher.similarity(item.promptRomaji ?? item.promptText, _controller.text);
+    setState(() => _score = score);
+
+    final repo = ref.read(speakingRepositoryProvider);
+    await repo.saveAttempt(SpeakingAttempt(
+      id: 0,
+      speakingItemId: item.id,
+      recognizedText: _controller.text,
+      similarityScore: score,
+      attemptedAt: DateTime.now(),
+    ));
   }
 
   @override
@@ -201,30 +163,25 @@ class _SpeakingPracticeScreenState extends ConsumerState<SpeakingPracticeScreen>
               ],
             ),
           ),
-          const SizedBox(height: 24),
-          GestureDetector(
-            onTap: _isListening ? _stopListening : _startListening,
-            child: Container(
-              width: 88,
-              height: 88,
-              decoration: BoxDecoration(
-                color: _isListening ? AppColors.error : AppColors.primary,
-                shape: BoxShape.circle,
-              ),
-              child: Icon(_isListening ? Icons.stop_rounded : Icons.mic_rounded, color: Colors.white, size: 40),
-            ),
+          const SizedBox(height: 20),
+          Text(
+            "Yuqoridagi gapni ovoz chiqarib o'qing, so'ng qanday aytganingizni (romaji bilan) shu yerga yozing:",
+            style: AppTypography.bodySmall,
+            textAlign: TextAlign.center,
           ),
           const SizedBox(height: 12),
-          Text(
-            _isListening ? "Tinglanmoqda... bosing to'xtatish uchun" : "Ushlab gapiring",
-            style: AppTypography.bodySmall,
+          TextField(
+            controller: _controller,
+            enabled: _score == null,
+            decoration: InputDecoration(
+              hintText: 'masalan: hajimemashite',
+              filled: true,
+              fillColor: AppColors.white,
+              border: OutlineInputBorder(borderRadius: BorderRadius.circular(14), borderSide: BorderSide.none),
+            ),
           ),
-          if (_recognizedText.isNotEmpty) ...[
-            const SizedBox(height: 16),
-            Text('Siz aytdingiz: "$_recognizedText"', style: AppTypography.body, textAlign: TextAlign.center),
-          ],
           if (_score != null) ...[
-            const SizedBox(height: 12),
+            const SizedBox(height: 16),
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
               decoration: BoxDecoration(color: AppColors.mint, borderRadius: BorderRadius.circular(14)),
@@ -235,25 +192,26 @@ class _SpeakingPracticeScreenState extends ConsumerState<SpeakingPracticeScreen>
             ),
           ],
           const Spacer(),
-          if (_score != null)
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    _currentIndex++;
-                    _recognizedText = '';
-                    _score = null;
-                  });
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: AppColors.primary,
-                  padding: const EdgeInsets.symmetric(vertical: 16),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-                ),
-                child: Text('Keyingisi', style: AppTypography.buttonPrimary),
+          SizedBox(
+            width: double.infinity,
+            child: ElevatedButton(
+              onPressed: _score == null
+                  ? _checkAnswer
+                  : () {
+                      setState(() {
+                        _currentIndex++;
+                        _controller.clear();
+                        _score = null;
+                      });
+                    },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: AppColors.primary,
+                padding: const EdgeInsets.symmetric(vertical: 16),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
               ),
+              child: Text(_score == null ? 'Tekshirish' : 'Keyingisi', style: AppTypography.buttonPrimary),
             ),
+          ),
         ],
       ),
     );
