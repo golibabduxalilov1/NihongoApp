@@ -1,0 +1,42 @@
+{
+  "_comment": "Bu shablon foydalanuvchining o'z (litsenziyalangan) darslik nusxasidan kontent import qilish formatini ko'rsatadi. Minna no Nihongo matnini bu faylga to'g'ridan-to'g'ri joylashtirmang va repoga qo'shmang.",
+  "lesson": {
+    "title": "Namuna dars sarlavhasi",
+    "order_index": 3,
+    "book": 1
+  },
+  "vocabulary": [
+    {
+      "kanji": "食べます",
+      "kana": "たべます",
+      "romaji": "tabemasu",
+      "translation_uz": "yeyman",
+      "translation_ru": "есть, кушать",
+      "example_sentence": "わたしは ごはんを たべます。"
+    }
+  ],
+  "grammar": [
+    {
+      "title": "СУЩ を ГЛАГ (to'g'ridan-to'g'ri to'ldiruvchi)",
+      "explanation": "を zarrachasi fe'l ta'sir qiladigan predmetni ko'rsatadi.",
+      "examples": [
+        {"jp": "ごはんを たべます。", "translation": "Ovqat yeyman."}
+      ]
+    }
+  ],
+  "practice_items": [
+    {
+      "stage": 4,
+      "type": "fillBlank",
+      "content": {"sentence": "ごはん＿ たべます。", "hint": "to'g'ridan-to'g'ri to'ldiruvchi zarracha"},
+      "correct_answer": "を"
+    }
+  ],
+  "quiz_questions": [
+    {
+      "question": "「食べます」ning ma'nosi?",
+      "options": ["ichaman", "yeyman", "ko'raman", "yozaman"],
+      "correct_option_index": 1
+    }
+  ]
+}
