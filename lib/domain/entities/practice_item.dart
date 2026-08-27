@@ -27,6 +27,8 @@ class PracticeItem {
   final PracticeType type;
   final Map<String, dynamic> content;
   final String? correctAnswer;
+  final String? topicTag; // masalan "particle_wa" - xato tahlili uchun
+  final Map<String, String>? mistakeExplanations; // noto'g'ri variant -> nega xato ekanligi
 
   const PracticeItem({
     required this.id,
@@ -35,7 +37,16 @@ class PracticeItem {
     required this.type,
     required this.content,
     this.correctAnswer,
+    this.topicTag,
+    this.mistakeExplanations,
   });
+
+  /// Berilgan noto'g'ri javob uchun tushuntirish matnini topadi.
+  /// Topilmasa umumiy xabar qaytaradi.
+  String explanationFor(String wrongAnswer) {
+    return mistakeExplanations?[wrongAnswer] ??
+        "Bu javob to'g'ri emas. To'g'ri javob: $correctAnswer";
+  }
 }
 
 /// Dars oxiridagi yoki checkpoint savoli (baholanadigan)

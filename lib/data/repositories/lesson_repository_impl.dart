@@ -118,16 +118,27 @@ class LessonRepositoryImpl implements LessonRepository {
       whereArgs: [lessonId, stage],
     );
 
-    return rows.map((r) {
-      return PracticeItem(
-        id: r['id'] as int,
-        lessonId: r['lesson_id'] as int,
-        stage: r['stage'] as int,
-        type: PracticeType.fromString(r['type'] as String),
-        content: jsonDecode(r['content'] as String) as Map<String, dynamic>,
-        correctAnswer: r['correct_answer'] as String?,
-      );
-    }).toList();
+    return rows.map(_mapRowToPracticeItem).toList();
+  }
+
+  PracticeItem _mapRowToPracticeItem(Map<String, dynamic> r) {
+    Map<String, String>? mistakeExplanations;
+    final rawExplanations = r['mistake_explanation'] as String?;
+    if (rawExplanations != null && rawExplanations.isNotEmpty) {
+      final decoded = jsonDecode(rawExplanations) as Map<String, dynamic>;
+      mistakeExplanations = decoded.map((k, v) => MapEntry(k, v.toString()));
+    }
+
+    return PracticeItem(
+      id: r['id'] as int,
+      lessonId: r['lesson_id'] as int,
+      stage: r['stage'] as int,
+      type: PracticeType.fromString(r['type'] as String),
+      content: jsonDecode(r['content'] as String) as Map<String, dynamic>,
+      correctAnswer: r['correct_answer'] as String?,
+      topicTag: r['topic_tag'] as String?,
+      mistakeExplanations: mistakeExplanations,
+    );
   }
 
   @override

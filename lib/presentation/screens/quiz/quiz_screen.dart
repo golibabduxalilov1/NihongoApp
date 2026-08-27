@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../domain/entities/practice_item.dart';
+import '../../../domain/entities/mistake_log_entry.dart';
 import '../../../domain/usecases/submit_lesson_quiz_usecase.dart';
 import '../../providers/lesson_providers.dart';
 import '../../providers/repository_providers.dart';
+import '../../providers/user_stats_providers.dart';
 import '../../../core/constants/app_colors.dart';
 import '../checkpoint/checkpoint_screen.dart';
 
@@ -195,6 +197,28 @@ class _QuizScreenState extends ConsumerState<QuizScreen> {
       answers: _answers,
       correctAnswers: correctAnswers,
     );
+
+    // Xato tahlili: har bir noto'g'ri javob mistake_log jadvaliga yoziladi,
+    // shunda GetWeakPointsUseCase keyinchalik zaif mavzularni topa oladi.
+    final mistakeRepo = ref.read(mistakeRepositoryProvider);
+    for (final q in questions) {
+      final selected = _answers[q.id];
+      if (selected != null && selected != q.correctOptionIndex) {
+        await mistakeRepo.logMistake(MistakeLogEntry(
+          id: 0,
+          quizQuestionId: q.id,
+          lessonId: widget.lessonId,
+          selectedAnswer: q.options[selected],
+          correctAnswer: q.options[q.correctOptionIndex],
+          createdAt: DateTime.now(),
+        ));
+      }
+    }
+
+    // Motivatsiya tizimi: quiz tugatilganda faollik yozib boriladi.
+    final recordActivity = ref.read(recordStudyActivityUseCaseProvider);
+    await recordActivity.call(minutesStudied: 5);
+    ref.invalidate(userStatsProvider);
 
     ref.invalidate(lessonByIdProvider(widget.lessonId));
     ref.invalidate(lessonsListProvider);

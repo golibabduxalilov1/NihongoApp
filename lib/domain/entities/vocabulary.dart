@@ -7,6 +7,7 @@ class VocabularyItem {
   final String translationUz;
   final String? translationRu;
   final String? exampleSentence; // kontekst uchun to'liq gap
+  final String? exampleSentenceRomaji; // misol gapning lotin harflarida o'qilishi
   final String? audioPath;
 
   const VocabularyItem({
@@ -18,6 +19,7 @@ class VocabularyItem {
     required this.translationUz,
     this.translationRu,
     this.exampleSentence,
+    this.exampleSentenceRomaji,
     this.audioPath,
   });
 
@@ -34,6 +36,7 @@ class VocabularyItem {
       translationUz: map['translation_uz'] as String,
       translationRu: map['translation_ru'] as String?,
       exampleSentence: map['example_sentence'] as String?,
+      exampleSentenceRomaji: map['example_sentence_romaji'] as String?,
       audioPath: map['audio_path'] as String?,
     );
   }
@@ -48,6 +51,7 @@ class VocabularyItem {
       'translation_uz': translationUz,
       'translation_ru': translationRu,
       'example_sentence': exampleSentence,
+      'example_sentence_romaji': exampleSentenceRomaji,
       'audio_path': audioPath,
     };
   }

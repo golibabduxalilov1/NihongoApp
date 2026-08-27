@@ -22,6 +22,9 @@ dependencies:
   # Audio (talaffuz uchun)
   just_audio: ^0.9.40
 
+  # Gapirish mashqi (shadowing) - ovozni matnga aylantirish
+  speech_to_text: ^7.0.0
+
   # JSON serializatsiya
   json_annotation: ^4.9.0
 
@@ -44,10 +47,3 @@ flutter:
 
   assets:
     - assets/sample_data/
-
-  fonts:
-    - family: NotoSansJP
-      fonts:
-        - asset: assets/fonts/NotoSansJP-Regular.ttf
-        - asset: assets/fonts/NotoSansJP-Bold.ttf
-          weight: 700

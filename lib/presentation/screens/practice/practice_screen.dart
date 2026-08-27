@@ -5,6 +5,19 @@ import '../../providers/lesson_providers.dart';
 import '../../providers/repository_providers.dart';
 import '../../../core/constants/app_colors.dart';
 
+/// Bitta PracticeItem uchun mos widget'ni turi bo'yicha tanlaydi.
+/// Public qilingan, chunki TargetedPracticeScreen ham shu widget'larni
+/// qayta ishlatadi (kod takrorlanishining oldini olish uchun).
+Widget buildPracticeItemWidget(PracticeItem item, void Function(bool wasCorrect) onAnswered) {
+  return switch (item.type) {
+    PracticeType.multipleChoice => _MultipleChoiceWidget(item: item, onAnswered: onAnswered),
+    PracticeType.fillBlank => _FillBlankWidget(item: item, onAnswered: onAnswered),
+    PracticeType.rearrange => _RearrangeWidget(item: item, onAnswered: onAnswered),
+    PracticeType.openEnded => _OpenEndedWidget(item: item, onAnswered: onAnswered),
+    PracticeType.flashcard => const Text('Bu turdagi mashq bu yerda qo\'llab-quvvatlanmaydi'),
+  };
+}
+
 class PracticeScreen extends ConsumerStatefulWidget {
   final int lessonId;
   final int stage;
@@ -96,18 +109,7 @@ class _PracticeScreenState extends ConsumerState<PracticeScreen> {
           Text('${_currentIndex + 1} / $total'),
           const SizedBox(height: 24),
           Expanded(
-            child: switch (item.type) {
-              PracticeType.multipleChoice => _MultipleChoiceWidget(
-                  item: item, onAnswered: _handleAnswered),
-              PracticeType.fillBlank =>
-                _FillBlankWidget(item: item, onAnswered: _handleAnswered),
-              PracticeType.rearrange =>
-                _RearrangeWidget(item: item, onAnswered: _handleAnswered),
-              PracticeType.openEnded =>
-                _OpenEndedWidget(item: item, onAnswered: _handleAnswered),
-              PracticeType.flashcard =>
-                const Text('Bu turdagi mashq bu yerda qo\'llab-quvvatlanmaydi'),
-            },
+            child: buildPracticeItemWidget(item, _handleAnswered),
           ),
         ],
       ),
@@ -149,6 +151,7 @@ class _MultipleChoiceWidgetState extends State<_MultipleChoiceWidget> {
   Widget build(BuildContext context) {
     final question = widget.item.content['question'] as String;
     final options = (widget.item.content['options'] as List).cast<String>();
+    final isWrong = _submitted && _selected != widget.item.correctAnswer;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -177,6 +180,30 @@ class _MultipleChoiceWidgetState extends State<_MultipleChoiceWidget> {
             ),
           );
         }),
+        // Mikro-feedback: xato bo'lsa, nega xato ekanini tushuntiramiz
+        // (TZ funksiya 2, mistake_explanation maydoni orqali).
+        if (isWrong && _selected != null)
+          Container(
+            margin: const EdgeInsets.only(bottom: 12),
+            padding: const EdgeInsets.all(12),
+            decoration: BoxDecoration(
+              color: AppColors.primaryLight,
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Icon(Icons.info_outline, color: AppColors.primaryDark, size: 18),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: Text(
+                    widget.item.explanationFor(_selected!),
+                    style: const TextStyle(fontSize: 13, color: AppColors.primaryDark),
+                  ),
+                ),
+              ],
+            ),
+          ),
         const SizedBox(height: 12),
         if (!_submitted)
           ElevatedButton(

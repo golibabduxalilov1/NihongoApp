@@ -28,6 +28,9 @@ class SeedDataLoader {
       await _seedLesson1(txn);
       await _seedLesson2(txn);
       await _seedCheckpoint(txn);
+      await _seedPlacementTest(txn);
+      await _seedWritingPractice(txn);
+      await _seedSpeakingPractice(txn);
     });
   }
 
@@ -50,6 +53,7 @@ class SeedDataLoader {
         'translation_uz': 'men',
         'translation_ru': 'я',
         'example_sentence': 'わたしは がくせいです。',
+        'example_sentence_romaji': 'Watashi wa gakusei desu.',
       },
       {
         'kanji': '学生',
@@ -58,6 +62,7 @@ class SeedDataLoader {
         'translation_uz': "talaba, o'quvchi",
         'translation_ru': 'студент',
         'example_sentence': 'わたしは がくせいです。',
+        'example_sentence_romaji': 'Watashi wa gakusei desu.',
       },
       {
         'kanji': '先生',
@@ -66,6 +71,7 @@ class SeedDataLoader {
         'translation_uz': "o'qituvchi",
         'translation_ru': 'учитель',
         'example_sentence': 'あの ひとは せんせいです。',
+        'example_sentence_romaji': 'Ano hito wa sensei desu.',
       },
       {
         'kanji': null,
@@ -74,6 +80,7 @@ class SeedDataLoader {
         'translation_uz': 'kompaniya xodimi',
         'translation_ru': 'сотрудник компании',
         'example_sentence': 'たなかさんは かいしゃいんです。',
+        'example_sentence_romaji': 'Tanaka-san wa kaishain desu.',
       },
       {
         'kanji': null,
@@ -82,6 +89,7 @@ class SeedDataLoader {
         'translation_uz': 'tanishganimdan xursandman',
         'translation_ru': 'очень приятно (при знакомстве)',
         'example_sentence': 'はじめまして。よろしく おねがいします。',
+        'example_sentence_romaji': 'Hajimemashite. Yoroshiku onegaishimasu.',
       },
     ];
 
@@ -139,6 +147,7 @@ class SeedDataLoader {
         'hint': "Mavzu zarrachasini qo'ying",
       }),
       'correct_answer': 'は',
+      'topic_tag': 'particle_wa',
     });
     await txn.insert('practice_items', {
       'id': 1001,
@@ -150,6 +159,24 @@ class SeedDataLoader {
         'options': ['です', 'ですか', 'ました', 'ません'],
       }),
       'correct_answer': 'です',
+    });
+    // Zarracha bo'yicha xato tahlili misoli (TZ funksiya 2: は/が/を/に/で).
+    await txn.insert('practice_items', {
+      'id': 1002,
+      'lesson_id': 1,
+      'stage': 4,
+      'type': 'multipleChoice',
+      'content': jsonEncode({
+        'question': "「わたし＿ がくせいです。」 to'g'ri zarrachani tanlang:",
+        'options': ['は', 'が', 'を', 'に'],
+      }),
+      'correct_answer': 'は',
+      'topic_tag': 'particle_wa',
+      'mistake_explanation': jsonEncode({
+        'が': "「が」emas — bu yerda gap mavzusi (\"men kim ekanligim\") haqida gapirilyapti, shuning uchun mavzu zarrachasi「は」kerak. 「が」odatda yangi ma'lumot yoki ta'kidlash uchun ishlatiladi.",
+        'を': "「を」to'g'ridan-to'g'ri to'ldiruvchi zarrachasi (masalan「ほんを よみます」- kitob o'qiyman). Bu yerda to'ldiruvchi yo'q, shuning uchun mos emas.",
+        'に': "「に」odatda yo'nalish, vaqt yoki joy uchun ishlatiladi (masalan「がっこうに いきます」). Bu gapda na yo'nalish, na vaqt bor.",
+      }),
     });
 
     // 5-bosqich: Aralashtirilgan mashq
@@ -301,6 +328,7 @@ class SeedDataLoader {
         'translation_uz': 'bu (gapiruvchiga yaqin)',
         'translation_ru': 'это (близко к говорящему)',
         'example_sentence': 'これは ほんです。',
+        'example_sentence_romaji': 'Kore wa hon desu.',
       },
       {
         'kanji': null,
@@ -309,6 +337,7 @@ class SeedDataLoader {
         'translation_uz': 'u (tinglovchiga yaqin)',
         'translation_ru': 'то (близко к слушающему)',
         'example_sentence': 'それは わたしの かさです。',
+        'example_sentence_romaji': 'Sore wa watashi no kasa desu.',
       },
       {
         'kanji': '本',
@@ -317,6 +346,7 @@ class SeedDataLoader {
         'translation_uz': 'kitob',
         'translation_ru': 'книга',
         'example_sentence': 'これは にほんごの ほんです。',
+        'example_sentence_romaji': 'Kore wa nihongo no hon desu.',
       },
       {
         'kanji': null,
@@ -325,6 +355,7 @@ class SeedDataLoader {
         'translation_uz': 'soyabon',
         'translation_ru': 'зонт',
         'example_sentence': 'それは たなかさんの かさです。',
+        'example_sentence_romaji': 'Sore wa Tanaka-san no kasa desu.',
       },
       {
         'kanji': null,
@@ -333,6 +364,7 @@ class SeedDataLoader {
         'translation_uz': 'nima',
         'translation_ru': 'что',
         'example_sentence': 'これは なんですか。',
+        'example_sentence_romaji': 'Kore wa nan desu ka.',
       },
     ];
 
@@ -394,6 +426,24 @@ class SeedDataLoader {
         'options': ['kim', 'nima', 'qayer', 'qachon'],
       }),
       'correct_answer': 'nima',
+    });
+    // Zarracha bo'yicha xato tahlili misoli
+    await txn.insert('practice_items', {
+      'id': 2005,
+      'lesson_id': 2,
+      'stage': 4,
+      'type': 'multipleChoice',
+      'content': jsonEncode({
+        'question': "「これ＿ ほんです。」to'g'ri zarrachani tanlang:",
+        'options': ['は', 'が', 'を', 'で'],
+      }),
+      'correct_answer': 'は',
+      'topic_tag': 'particle_wa',
+      'mistake_explanation': jsonEncode({
+        'が': "「が」ta'kidlash yoki savol so'zi bilan birga ishlatiladi (masalan「だれが きますか」). Bu oddiy tasvirlash gapida「は」kerak.",
+        'を': "「を」faqat fe'lning to'g'ridan-to'g'ri to'ldiruvchisi bilan ishlatiladi. Bu yerda fe'l yo'q (です bilan tugaydi), shuning uchun mos emas.",
+        'で': "「で」vosita yoki joy (harakat sodir bo'ladigan) uchun ishlatiladi (masalan「でんしゃで いきます」). Bu gapga mos kelmaydi.",
+      }),
     });
 
     await txn.insert('practice_items', {
@@ -595,6 +645,113 @@ class SeedDataLoader {
         'question': q['question'],
         'options': jsonEncode(q['options']),
         'correct_option_index': q['correct'],
+      });
+    }
+  }
+
+  // ---------------------------------------------------------------------
+  // PLACEMENT TEST: onboarding joylashtirish testi savollari
+  // ---------------------------------------------------------------------
+  Future<void> _seedPlacementTest(Transaction txn) async {
+    final questions = [
+      {
+        'question': "「わたし＿ がくせいです。」to'g'ri zarrachani tanlang:",
+        'options': ['は', 'を', 'に', 'で'],
+        'correct': 0,
+        'maps_to': 1,
+        'order': 1,
+      },
+      {
+        'question': "「はじめまして」nima ma'noni bildiradi?",
+        'options': ['Rahmat', 'Tanishganimdan xursandman', 'Kechirasiz', 'Xayr'],
+        'correct': 1,
+        'maps_to': 1,
+        'order': 2,
+      },
+      {
+        'question': "Gapiruvchiga yaqin narsa uchun qaysi olmosh ishlatiladi?",
+        'options': ['あれ', 'それ', 'これ', 'どれ'],
+        'correct': 2,
+        'maps_to': 2,
+        'order': 3,
+      },
+      {
+        'question': "「これは なんですか。」ga to'g'ri javob namunasi qanday boshlanadi?",
+        'options': ['はい、そうです', '……ほんです', 'いいえ、ちがいます', 'ありがとう'],
+        'correct': 1,
+        'maps_to': 2,
+        'order': 4,
+      },
+    ];
+
+    for (var i = 0; i < questions.length; i++) {
+      final q = questions[i];
+      await txn.insert('placement_test_questions', {
+        'id': 8000 + i,
+        'maps_to_lesson_id': q['maps_to'],
+        'question': q['question'],
+        'options': jsonEncode(q['options']),
+        'correct_option_index': q['correct'],
+        'difficulty_order': q['order'],
+      });
+    }
+  }
+
+  // ---------------------------------------------------------------------
+  // WRITING PRACTICE: hiragana namunalari (litsenziyasiz, umumiy bilim)
+  // ---------------------------------------------------------------------
+  Future<void> _seedWritingPractice(Transaction txn) async {
+    final characters = [
+      {'char': 'あ', 'romaji': 'a', 'strokes': 3},
+      {'char': 'い', 'romaji': 'i', 'strokes': 2},
+      {'char': 'う', 'romaji': 'u', 'strokes': 2},
+      {'char': 'え', 'romaji': 'e', 'strokes': 2},
+      {'char': 'お', 'romaji': 'o', 'strokes': 3},
+    ];
+
+    for (var i = 0; i < characters.length; i++) {
+      final c = characters[i];
+      await txn.insert('writing_practice', {
+        'id': 9000 + i,
+        'lesson_id': null,
+        'character': c['char'],
+        'romaji': c['romaji'],
+        'stroke_order_svg_path': null,
+        'stroke_count': c['strokes'],
+        'character_type': 'hiragana',
+      });
+    }
+  }
+
+  // ---------------------------------------------------------------------
+  // SPEAKING PRACTICE: 1-dars uchun namuna shadowing/kaiwa elementlari
+  // ---------------------------------------------------------------------
+  Future<void> _seedSpeakingPractice(Transaction txn) async {
+    final items = [
+      {
+        'text': 'はじめまして。よろしく おねがいします。',
+        'romaji': 'Hajimemashite. Yoroshiku onegaishimasu.',
+        'translation': 'Tanishganimdan xursandman. Yaxshi munosabatda bo\'laylik.',
+        'is_kaiwa': 1,
+      },
+      {
+        'text': 'わたしは がくせいです。',
+        'romaji': 'Watashi wa gakusei desu.',
+        'translation': 'Men talabaman.',
+        'is_kaiwa': 0,
+      },
+    ];
+
+    for (var i = 0; i < items.length; i++) {
+      final it = items[i];
+      await txn.insert('speaking_items', {
+        'id': 10000 + i,
+        'lesson_id': 1,
+        'prompt_text': it['text'],
+        'prompt_romaji': it['romaji'],
+        'prompt_translation_uz': it['translation'],
+        'reference_audio_path': null,
+        'is_kaiwa': it['is_kaiwa'],
       });
     }
   }
