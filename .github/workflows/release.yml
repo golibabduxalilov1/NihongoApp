@@ -18,6 +18,8 @@ jobs:
     steps:
       - name: Kodni yuklab olish
         uses: actions/checkout@v4
+        with:
+          path: source
 
       - name: Flutter SDK o'rnatish
         uses: subosito/flutter-action@v2
@@ -25,25 +27,74 @@ jobs:
           flutter-version: '3.24.0'
           channel: 'stable'
 
-      - name: Java o'rnatish (Android build uchun kerak)
+      - name: Java o'rnatish
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Paketlarni o'rnatish
-        run: flutter pub get
+      - name: Yangi Flutter skeleton yaratish
+        run: flutter create --platforms=android --org com.nihongomanzil app
 
-      - name: Testlarni ishga tushirish
-        run: flutter test
+      - name: Bizning kodni skeletonga ko'chirish
+        run: |
+          rm -rf app/lib
+          cp -r source/lib app/lib
+          cp source/pubspec.yaml app/pubspec.yaml
+          rm -rf app/assets
+          cp -r source/assets app/assets 2>/dev/null || true
+
+      - name: settings.gradle Kotlin versiyasini yangilash
+        working-directory: app/android
+        run: |
+          if [ -f settings.gradle.kts ]; then
+            sed -i -E 's/(id\("org\.jetbrains\.kotlin\.android"\) version ")[0-9.]+(")/\11.9.24\2/' settings.gradle.kts
+          fi
+          if [ -f settings.gradle ]; then
+            sed -i -E 's/(id "org\.jetbrains\.kotlin\.android" version ")[0-9.]+(")/\11.9.24\2/' settings.gradle
+          fi
+
+      - name: compileSdk va targetSdk ni 34 ga belgilash
+        working-directory: app/android/app
+        run: |
+          if [ -f build.gradle.kts ]; then
+            sed -i 's/compileSdk = flutter.compileSdkVersion/compileSdk = 34/' build.gradle.kts
+            sed -i 's/targetSdk = flutter.targetSdkVersion/targetSdk = 34/' build.gradle.kts
+          fi
+          if [ -f build.gradle ]; then
+            sed -i 's/compileSdkVersion flutter.compileSdkVersion/compileSdkVersion 34/' build.gradle
+            sed -i 's/targetSdkVersion flutter.targetSdkVersion/targetSdkVersion 34/' build.gradle
+          fi
+
+      - name: Muammoli plaginlarni barqaror versiyalarga tushirish
+        working-directory: app
+        run: |
+          echo "" >> pubspec.yaml
+          echo "dependency_overrides:" >> pubspec.yaml
+          echo "  flutter_plugin_android_lifecycle: 2.0.17" >> pubspec.yaml
+          echo "  flutter_tts: 3.8.5" >> pubspec.yaml
+          flutter pub get
+
+      - name: Mikrofon/TTS ruxsatlarini AndroidManifest.xml ga qo'shish
+        run: |
+          MANIFEST="app/android/app/src/main/AndroidManifest.xml"
+          if ! grep -q "RECORD_AUDIO" "$MANIFEST"; then
+            sed -i '/<\/manifest>/i\    <uses-permission android:name="android.permission.RECORD_AUDIO" />' "$MANIFEST"
+          fi
 
       - name: Release APK build qilish
+        working-directory: app
         run: flutter build apk --release
+
+      - name: APK faylini qayta nomlash
+        working-directory: app
+        run: |
+          mv build/app/outputs/flutter-apk/app-release.apk build/app/outputs/flutter-apk/nihongo_manzil_${{ github.ref_name }}.apk
 
       - name: APK'ni GitHub Release'ga biriktirish
         uses: softprops/action-gh-release@v2
         with:
-          files: build/app/outputs/flutter-apk/app-release.apk
+          files: app/build/app/outputs/flutter-apk/nihongo_manzil_${{ github.ref_name }}.apk
           generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../core/constants/app_typography.dart';
-import 'home_screen.dart';
+import '../home/home_screen.dart';
 import '../lessons_list/lessons_list_screen.dart';
 import '../practice_hub/practice_hub_screen.dart';
 import '../stats/stats_screen.dart';
