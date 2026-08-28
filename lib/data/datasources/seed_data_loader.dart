@@ -181,7 +181,7 @@ class SeedDataLoader {
 
     // 5-bosqich: Aralashtirilgan mashq
     await txn.insert('practice_items', {
-      'id': 1002,
+      'id': 1005,
       'lesson_id': 1,
       'stage': 5,
       'type': 'rearrange',
@@ -194,7 +194,7 @@ class SeedDataLoader {
 
     // 6-bosqich: Erkin ishlatish
     await txn.insert('practice_items', {
-      'id': 1003,
+      'id': 1006,
       'lesson_id': 1,
       'stage': 6,
       'type': 'openEnded',
@@ -208,7 +208,7 @@ class SeedDataLoader {
 
     // 7-bosqich: Integratsiya
     await txn.insert('practice_items', {
-      'id': 1004,
+      'id': 1007,
       'lesson_id': 1,
       'stage': 7,
       'type': 'openEnded',
