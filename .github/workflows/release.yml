@@ -44,6 +44,21 @@ jobs:
           rm -rf app/assets
           cp -r source/assets app/assets 2>/dev/null || true
 
+      - name: Ilova nomini o'zgartirish (AndroidManifest.xml)
+        run: |
+          MANIFEST="app/android/app/src/main/AndroidManifest.xml"
+          echo "=== O'zgarishdan oldin ==="
+          grep "android:label" "$MANIFEST" || echo "android:label topilmadi"
+          sed -i -E 's/android:label="[^"]*"/android:label="Nihongo Manzil"/' "$MANIFEST"
+          echo "=== O'zgarishdan keyin ==="
+          grep "android:label" "$MANIFEST"
+
+      - name: Ilova ikonkasini almashtirish
+        run: |
+          for dir in mipmap-mdpi mipmap-hdpi mipmap-xhdpi mipmap-xxhdpi mipmap-xxxhdpi; do
+            cp source/android_icon_source/$dir/ic_launcher.png app/android/app/src/main/res/$dir/ic_launcher.png
+          done
+
       - name: settings.gradle Kotlin versiyasini yangilash
         working-directory: app/android
         run: |
