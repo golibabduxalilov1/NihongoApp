@@ -1,0 +1,114 @@
+{
+  "lesson": {
+    "id": 7,
+    "title": "7-dars: Sovg'a berish",
+    "order_index": 7,
+    "book": 1
+  },
+  "vocabulary": [
+    {"kanji": "あげます", "kana": "あげます", "romaji": "agemasu", "translation_uz": "bermoq, sovg'a qilmoq", "translation_ru": "давать, дарить", "example_sentence": "わたしは ともだちに 花を あげます。", "example_sentence_romaji": "Watashi wa tomodachi ni hana o agemasu."},
+    {"kanji": null, "kana": "もらいます", "romaji": "moraimasu", "translation_uz": "olmoq (kimdandir)", "translation_ru": "получать", "example_sentence": "わたしは 先生に 本を もらいました。", "example_sentence_romaji": "Watashi wa sensei ni hon o moraimashita."},
+    {"kanji": "貸します", "kana": "かします", "romaji": "kashimasu", "translation_uz": "qarzga bermoq", "translation_ru": "давать в долг", "example_sentence": "ともだちに かさを かします。", "example_sentence_romaji": "Tomodachi ni kasa o kashimasu."},
+    {"kanji": "借ります", "kana": "かります", "romaji": "karimasu", "translation_uz": "qarzga olmoq", "translation_ru": "брать в долг", "example_sentence": "としょかんで 本を かります。", "example_sentence_romaji": "Toshokan de hon o karimasu."},
+    {"kanji": "教えます", "kana": "おしえます", "romaji": "oshiemasu", "translation_uz": "o'rgatmoq", "translation_ru": "преподавать, обучать", "example_sentence": "わたしは にほんごを おしえます。", "example_sentence_romaji": "Watashi wa nihongo o oshiemasu."},
+    {"kanji": "習います", "kana": "ならいます", "romaji": "naraimasu", "translation_uz": "o'rganmoq", "translation_ru": "изучать", "example_sentence": "先生に えいごを ならいます。", "example_sentence_romaji": "Sensei ni eigo o naraimasu."},
+    {"kanji": "花", "kana": "はな", "romaji": "hana", "translation_uz": "gul", "translation_ru": "цветок", "example_sentence": "はなを あげました。", "example_sentence_romaji": "Hana o agemashita."},
+    {"kanji": "誕生日", "kana": "たんじょうび", "romaji": "tanjoubi", "translation_uz": "tug'ilgan kun", "translation_ru": "день рождения", "example_sentence": "たんじょうびに プレゼントを もらいました。", "example_sentence_romaji": "Tanjoubi ni purezento o moraimashita."},
+    {"kanji": null, "kana": "プレゼント", "romaji": "purezento", "translation_uz": "sovg'a", "translation_ru": "подарок", "example_sentence": "ともだちに プレゼントを あげます。", "example_sentence_romaji": "Tomodachi ni purezento o agemasu."},
+    {"kanji": "父", "kana": "ちち", "romaji": "chichi", "translation_uz": "(mening) otam", "translation_ru": "(мой) отец", "example_sentence": "ちちに 花を あげました。", "example_sentence_romaji": "Chichi ni hana o agemashita."},
+    {"kanji": null, "kana": "もう", "romaji": "mou", "translation_uz": "allaqachon", "translation_ru": "уже", "example_sentence": "もう プレゼントを おくりました。", "example_sentence_romaji": "Mou purezento o okurimashita."}
+  ],
+  "grammar": [
+    {
+      "title": "СУЩ1 (kishi) に СУЩ2 を あげます / かします / おしえます",
+      "explanation": "「あげます」, 「かします」, 「おしえます」kabi fe'llar biror narsani berish yoki taqdim etishni bildiradi. Bu narsa kimga berilayotgani 「に」zarrachasi bilan ko'rsatiladi.",
+      "examples": [
+        {"jp": "ともだちに 花を あげます。", "translation": "Do'stimga gul beraman."},
+        {"jp": "先生に にほんごを おしえます。", "translation": "O'qituvchiga yapon tilini o'rgataman."}
+      ]
+    },
+    {
+      "title": "СУЩ1 (kishi) に СУЩ2 を もらいます / かります / ならいます",
+      "explanation": "「もらいます」, 「かります」, 「ならいます」kabi fe'llar biror narsani olishni bildiradi. Narsa kimdan olinayotgani ham 「に」(yoki 「から」) bilan ko'rsatiladi.",
+      "examples": [
+        {"jp": "先生に 本を もらいました。", "translation": "O'qituvchidan kitob oldim."},
+        {"jp": "図書館から 本を かりました。", "translation": "Kutubxonadan kitob oldim (qarzga)."}
+      ]
+    },
+    {
+      "title": "もう ГЛАГмашита (allaqachon qilingan)",
+      "explanation": "「もう」so'zi fe'lning o'tgan zamon shakli bilan birga 'allaqachon qilingan' ma'nosini bildiradi.",
+      "examples": [
+        {"jp": "もう プレゼントを おくりました。", "translation": "Sovg'ani allaqachon jo'natdim."}
+      ]
+    }
+  ],
+  "practice_items": [
+    {
+      "stage": 4,
+      "type": "fillBlank",
+      "content": {"sentence": "ともだち＿ 花を あげます。", "hint": "qabul qiluvchini bildiruvchi zarracha"},
+      "correct_answer": "に"
+    },
+    {
+      "stage": 4,
+      "type": "multipleChoice",
+      "content": {"question": "「先生＿ 本を もらいました。」to'g'ri zarrachani tanlang:", "options": ["に", "を", "が", "へ"]},
+      "correct_answer": "に",
+      "topic_tag": "particle_ni",
+      "mistake_explanation": {
+        "を": "「を」to'g'ridan-to'g'ri to'ldiruvchi uchun ishlatiladi (本を), manba uchun 「に」kerak.",
+        "が": "「が」bu gapda mos emas, chunki mavzu allaqachon 「わたしは」bilan berilgan.",
+        "へ": "「へ」harakat yo'nalishini bildiradi, kishi-manba uchun emas."
+      }
+    },
+    {
+      "stage": 4,
+      "type": "multipleChoice",
+      "content": {"question": "«O'rgataman» va «o'rganaman» fe'llari qaysi juftlik?", "options": ["あげます / もらいます", "おしえます / ならいます", "かします / かります", "たべます / のみます"]},
+      "correct_answer": "おしえます / ならいます"
+    },
+    {
+      "stage": 4,
+      "type": "multipleChoice",
+      "content": {"question": "「もう プレゼントを おくり＿。」to'g'ri to'ldiring:", "options": ["ます", "ました", "ません", "ますか"]},
+      "correct_answer": "ました"
+    },
+    {
+      "stage": 5,
+      "type": "rearrange",
+      "content": {"words": ["わたしは", "ともだちに", "花を", "あげました"], "instruction": "So'zlarni to'g'ri tartibga tering"},
+      "correct_answer": "わたしは ともだちに 花を あげました"
+    },
+    {
+      "stage": 5,
+      "type": "rearrange",
+      "content": {"words": ["としょかんで", "本を", "かりました"], "instruction": "So'zlarni to'g'ri tartibga tering"},
+      "correct_answer": "としょかんで 本を かりました"
+    },
+    {
+      "stage": 6,
+      "type": "openEnded",
+      "content": {"prompt": "Oxirgi tug'ilgan kuningizda kimdan qanday sovg'a olganingizni yoki kimga sovg'a berganingizni yozing."},
+      "correct_answer": null
+    },
+    {
+      "stage": 7,
+      "type": "openEnded",
+      "content": {"prompt": "Kitob yoki narsa qarzga so'rash dialogini yozing (かします / かります fe'llarini ishlatib)."},
+      "correct_answer": null
+    }
+  ],
+  "quiz_questions": [
+    {"question": "「あげます」ning ma'nosi:", "options": ["Olmoq", "Bermoq", "Ko'rmoq", "Yozmoq"], "correct_option_index": 1},
+    {"question": "「もらいます」ning ma'nosi:", "options": ["Bermoq", "Olmoq", "O'rgatmoq", "Sotmoq"], "correct_option_index": 1},
+    {"question": "Kimga berilishini bildiruvchi zarracha:", "options": ["を", "が", "に", "で"], "correct_option_index": 2},
+    {"question": "«Kitobni qarzga oldim» - to'g'ri fe'l:", "options": ["かします", "かります", "あげます", "もらいます"], "correct_option_index": 1},
+    {"question": "「おしえます」ning ma'nosi:", "options": ["O'rganmoq", "O'rgatmoq", "Yozmoq", "O'qimoq"], "correct_option_index": 1},
+    {"question": "「たんじょうび」ning tarjimasi:", "options": ["Bayram", "Tug'ilgan kun", "Dam olish kuni", "Yig'ilish"], "correct_option_index": 1},
+    {"question": "「もう」so'zi qanday ma'no beradi?", "options": ["Hali", "Allaqachon", "Hech qachon", "Doim"], "correct_option_index": 1},
+    {"question": "«Do'stimga gul berdim» - to'g'ri gap:", "options": ["ともだちが 花を あげました。", "ともだちに 花を あげました。", "ともだちを 花に あげました。", "ともだちで 花を あげました。"], "correct_option_index": 1},
+    {"question": "「かします」ning ma'nosi:", "options": ["Qarzga olmoq", "Qarzga bermoq", "Sotib olmoq", "Sotmoq"], "correct_option_index": 1},
+    {"question": "「花」so'zining o'qilishi:", "options": ["はな", "はし", "ほん", "はい"], "correct_option_index": 0}
+  ]
+}

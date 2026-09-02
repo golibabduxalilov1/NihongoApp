@@ -1,0 +1,124 @@
+{
+  "lesson": {
+    "id": 8,
+    "title": "8-dars: Bu qanday?",
+    "order_index": 8,
+    "book": 1
+  },
+  "vocabulary": [
+    {"kanji": null, "kana": "きれい[な]", "romaji": "kirei[na]", "translation_uz": "chiroyli, toza", "translation_ru": "красивый, чистый", "example_sentence": "この 花は きれいです。", "example_sentence_romaji": "Kono hana wa kirei desu."},
+    {"kanji": "静か[な]", "kana": "しずか[な]", "romaji": "shizuka[na]", "translation_uz": "tinch, jimjit", "translation_ru": "тихий, спокойный", "example_sentence": "この まちは しずかです。", "example_sentence_romaji": "Kono machi wa shizuka desu."},
+    {"kanji": "有名[な]", "kana": "ゆうめい[な]", "romaji": "yuumei[na]", "translation_uz": "mashhur", "translation_ru": "знаменитый", "example_sentence": "たしけんとは ゆうめいな まちです。", "example_sentence_romaji": "Tashikento wa yuumei na machi desu."},
+    {"kanji": "親切[な]", "kana": "しんせつ[な]", "romaji": "shinsetsu[na]", "translation_uz": "mehribon", "translation_ru": "доброжелательный", "example_sentence": "マリカさんは しんせつです。", "example_sentence_romaji": "Marika-san wa shinsetsu desu."},
+    {"kanji": "大きい", "kana": "おおきい", "romaji": "ookii", "translation_uz": "katta", "translation_ru": "большой", "example_sentence": "この かいしゃは おおきいです。", "example_sentence_romaji": "Kono kaisha wa ookii desu."},
+    {"kanji": "新しい", "kana": "あたらしい", "romaji": "atarashii", "translation_uz": "yangi", "translation_ru": "новый", "example_sentence": "あたらしい 本を かいました。", "example_sentence_romaji": "Atarashii hon o kaimashita."},
+    {"kanji": "難しい", "kana": "むずかしい", "romaji": "muzukashii", "translation_uz": "qiyin", "translation_ru": "трудный", "example_sentence": "にほんごは むずかしいです。", "example_sentence_romaji": "Nihongo wa muzukashii desu."},
+    {"kanji": "高い", "kana": "たかい", "romaji": "takai", "translation_uz": "baland; qimmat", "translation_ru": "высокий; дорогой", "example_sentence": "この 本は たかいです。", "example_sentence_romaji": "Kono hon wa takai desu."},
+    {"kanji": "面白い", "kana": "おもしろい", "romaji": "omoshiroi", "translation_uz": "qiziqarli", "translation_ru": "интересный", "example_sentence": "この えいがは おもしろいです。", "example_sentence_romaji": "Kono eiga wa omoshiroi desu."},
+    {"kanji": "忙しい", "kana": "いそがしい", "romaji": "isogashii", "translation_uz": "band", "translation_ru": "занятый", "example_sentence": "きょうは いそがしいです。", "example_sentence_romaji": "Kyou wa isogashii desu."},
+    {"kanji": null, "kana": "とても", "romaji": "totemo", "translation_uz": "juda", "translation_ru": "очень", "example_sentence": "とても たのしいです。", "example_sentence_romaji": "Totemo tanoshii desu."},
+    {"kanji": null, "kana": "あまり", "romaji": "amari", "translation_uz": "unchalik (inkorda)", "translation_ru": "не очень", "example_sentence": "あまり むずかしくないです。", "example_sentence_romaji": "Amari muzukashikunai desu."}
+  ],
+  "grammar": [
+    {
+      "title": "な-sifatlar va い-sifatlar",
+      "explanation": "Yapon tilida ikki turdagi sifat bor: 「い」bilan tugaydigan い-sifatlar (masalan たかい) va 「な」talab qiladigan な-sifatlar (masalan しずか[な]). Ularning qo'llanilish qoidalari farq qiladi.",
+      "examples": [
+        {"jp": "この まちは しずかです。", "translation": "Bu shahar tinch. (な-sifat)"},
+        {"jp": "この 本は たかいです。", "translation": "Bu kitob qimmat. (い-sifat)"}
+      ]
+    },
+    {
+      "title": "な-ПРИЛ [な] СУЩ / い-ПРИЛ СУЩ (aniqlovchi vazifasida)",
+      "explanation": "Sifat otni aniqlovchi vazifasida kelganda, な-sifatga 「な」qo'shiladi, い-sifat esa o'zgarishsiz otdan oldin qo'yiladi.",
+      "examples": [
+        {"jp": "マリカさんは しんせつな 先生です。", "translation": "Malika mehribon o'qituvchi."},
+        {"jp": "これは おもしろい 本です。", "translation": "Bu qiziqarli kitob."}
+      ]
+    },
+    {
+      "title": "い-ПРИЛ inkor shakli: ～くないです",
+      "explanation": "い-sifatning inkor shakli oxirgi 「い」ni olib tashlab, 「くないです」qo'shish bilan hosil qilinadi. な-sifatlar esa 「じゃ ありません」bilan inkor qilinadi.",
+      "examples": [
+        {"jp": "この 本は おもしろくないです。", "translation": "Bu kitob qiziqarli emas."},
+        {"jp": "ここは しずかじゃ ありません。", "translation": "Bu yer tinch emas."}
+      ]
+    },
+    {
+      "title": "とても／あまり (daraja qo'shimchalari)",
+      "explanation": "「とても」(juda) tasdiq gaplarda, 「あまり」(unchalik) esa inkor gaplarda sifatdan oldin ishlatiladi.",
+      "examples": [
+        {"jp": "にほんごは とても おもしろいです。", "translation": "Yapon tili juda qiziqarli."},
+        {"jp": "にほんごは あまり むずかしくないです。", "translation": "Yapon tili unchalik qiyin emas."}
+      ]
+    }
+  ],
+  "practice_items": [
+    {
+      "stage": 4,
+      "type": "fillBlank",
+      "content": {"sentence": "この 本は おもしろ＿ないです。", "hint": "い-sifat inkor shakli"},
+      "correct_answer": "く"
+    },
+    {
+      "stage": 4,
+      "type": "multipleChoice",
+      "content": {"question": "«Bu shahar tinch emas» - to'g'ri variant:", "options": ["しずかくないです。", "しずかじゃ ありません。", "しずかいないです。", "しずかません。"]},
+      "correct_answer": "しずかじゃ ありません。"
+    },
+    {
+      "stage": 4,
+      "type": "multipleChoice",
+      "content": {"question": "「マリカさんは しんせつ＿ 先生です。」bo'sh joyni to'ldiring:", "options": ["な", "の", "い", "だ"]},
+      "correct_answer": "な",
+      "topic_tag": "na_adjective",
+      "mistake_explanation": {
+        "の": "「の」otlarni bog'lash uchun ishlatiladi, な-sifat otni aniqlaganda 「な」kerak.",
+        "い": "「い」faqat い-sifatlar uchun ishlatiladi, しんせつ esa な-sifat.",
+        "だ": "「だ」bu tuzilmada ishlatilmaydi."
+      }
+    },
+    {
+      "stage": 4,
+      "type": "multipleChoice",
+      "content": {"question": "«Yapon tili unchalik qiyin emas» — to'g'ri variant:", "options": ["とても むずかしいです。", "あまり むずかしいです。", "あまり むずかしくないです。", "とても むずかしくないです。"]},
+      "correct_answer": "あまり むずかしくないです。"
+    },
+    {
+      "stage": 5,
+      "type": "rearrange",
+      "content": {"words": ["これは", "とても", "おもしろい", "本です"], "instruction": "So'zlarni to'g'ri tartibga tering"},
+      "correct_answer": "これは とても おもしろい 本です"
+    },
+    {
+      "stage": 5,
+      "type": "rearrange",
+      "content": {"words": ["マリカさんは", "しんせつな", "先生です"], "instruction": "So'zlarni to'g'ri tartibga tering"},
+      "correct_answer": "マリカさんは しんせつな 先生です"
+    },
+    {
+      "stage": 6,
+      "type": "openEnded",
+      "content": {"prompt": "O'zingiz yashaydigan shaharni sifatlar yordamida (きれい, しずか, おおきい va h.k.) tasvirlab yozing."},
+      "correct_answer": null
+    },
+    {
+      "stage": 7,
+      "type": "openEnded",
+      "content": {"prompt": "Do'stingiz bilan ko'rgan film yoki kitob haqida fikr almashish dialogini yozing (おもしろい / むずかしい kabi sifatlarni ishlatib)."},
+      "correct_answer": null
+    }
+  ],
+  "quiz_questions": [
+    {"question": "「たかい」so'zining ma'nosi (kontekstga qarab):", "options": ["Past, arzon", "Baland, qimmat", "Kichik", "Yangi"], "correct_option_index": 1},
+    {"question": "な-sifat otni aniqlaganda nima qo'shiladi?", "options": ["い", "な", "の", "だ"], "correct_option_index": 1},
+    {"question": "い-sifatning inkor shakli qanday hosil qilinadi?", "options": ["いを olib tashlab くないです qo'shiladi", "じゃ ありません qo'shiladi", "ません qo'shiladi", "でした qo'shiladi"], "correct_option_index": 0},
+    {"question": "「しずか」qaysi turdagi sifat?", "options": ["い-sifat", "な-sifat", "Fe'l", "Ot"], "correct_option_index": 1},
+    {"question": "«Juda» ma'nosini bildiruvchi so'z:", "options": ["あまり", "とても", "すこし", "ぜんぜん"], "correct_option_index": 1},
+    {"question": "「あまり」odatda qanday gaplarda ishlatiladi?", "options": ["Tasdiq gaplarda", "Inkor gaplarda", "Savol gaplarda", "Buyruq gaplarda"], "correct_option_index": 1},
+    {"question": "「むずかしい」ning tarjimasi:", "options": ["Oson", "Qiyin", "Qiziqarli", "Zerikarli"], "correct_option_index": 1},
+    {"question": "「いそがしい」ning ma'nosi:", "options": ["Erkin", "Band", "Charchagan", "Baxtli"], "correct_option_index": 1},
+    {"question": "To'g'ri gapni tanlang:", "options": ["これは きれいな 花です。", "これは きれい 花です。", "これは きれいい 花です。", "これは きれいの 花です。"], "correct_option_index": 0},
+    {"question": "「ゆうめい」ning ma'nosi:", "options": ["Mehribon", "Mashhur", "Tinch", "Chiroyli"], "correct_option_index": 1}
+  ]
+}

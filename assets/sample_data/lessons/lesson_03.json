@@ -1,0 +1,121 @@
+{
+  "lesson": {
+    "id": 3,
+    "title": "3-dars: Bu yer qayer?",
+    "order_index": 3,
+    "book": 1
+  },
+  "vocabulary": [
+    {"kanji": null, "kana": "ここ", "romaji": "koko", "translation_uz": "bu yer (gapiruvchiga yaqin)", "translation_ru": "здесь", "example_sentence": "ここは きょうしつです。", "example_sentence_romaji": "Koko wa kyoushitsu desu."},
+    {"kanji": null, "kana": "そこ", "romaji": "soko", "translation_uz": "u yer (tinglovchiga yaqin)", "translation_ru": "там (близко к собеседнику)", "example_sentence": "そこは じむしょです。", "example_sentence_romaji": "Soko wa jimusho desu."},
+    {"kanji": null, "kana": "あそこ", "romaji": "asoko", "translation_uz": "u yer (uzoqdagi)", "translation_ru": "там (вдали)", "example_sentence": "あそこは しょくどうです。", "example_sentence_romaji": "Asoko wa shokudou desu."},
+    {"kanji": null, "kana": "どこ", "romaji": "doko", "translation_uz": "qayer", "translation_ru": "где", "example_sentence": "トイレは どこですか。", "example_sentence_romaji": "Toire wa doko desu ka."},
+    {"kanji": "教室", "kana": "きょうしつ", "romaji": "kyoushitsu", "translation_uz": "sinf xonasi", "translation_ru": "класс, аудитория", "example_sentence": "ここは きょうしつです。", "example_sentence_romaji": "Koko wa kyoushitsu desu."},
+    {"kanji": "食堂", "kana": "しょくどう", "romaji": "shokudou", "translation_uz": "oshxona (ijtimoiy)", "translation_ru": "столовая", "example_sentence": "しょくどうは あそこです。", "example_sentence_romaji": "Shokudou wa asoko desu."},
+    {"kanji": "受付", "kana": "うけつけ", "romaji": "uketsuke", "translation_uz": "qabulxona", "translation_ru": "ресепшен", "example_sentence": "うけつけは どこですか。", "example_sentence_romaji": "Uketsuke wa doko desu ka."},
+    {"kanji": "会社", "kana": "かいしゃ", "romaji": "kaisha", "translation_uz": "kompaniya, firma", "translation_ru": "компания, фирма", "example_sentence": "あの かいしゃは おおきいです。", "example_sentence_romaji": "Ano kaisha wa ookii desu."},
+    {"kanji": null, "kana": "エレベーター", "romaji": "erebeetaa", "translation_uz": "lift", "translation_ru": "лифт", "example_sentence": "エレベーターは あちらです。", "example_sentence_romaji": "Erebeetaa wa achira desu."},
+    {"kanji": "-円", "kana": "-えん", "romaji": "-en", "translation_uz": "... yen", "translation_ru": "... иен", "example_sentence": "これは 500えんです。", "example_sentence_romaji": "Kore wa gohyaku en desu."},
+    {"kanji": null, "kana": "いくら", "romaji": "ikura", "translation_uz": "qancha turadi", "translation_ru": "сколько стоит", "example_sentence": "この かさは いくらですか。", "example_sentence_romaji": "Kono kasa wa ikura desu ka."}
+  ],
+  "grammar": [
+    {
+      "title": "ここ／そこ／あそこ／どこ (joy ko'rsatish olmoshlari)",
+      "explanation": "ここ — gapiruvchiga yaqin joy, そこ — tinglovchiga yaqin joy, あそこ — ikkalasidan uzoq joy, どこ — so'roq shakli 'qayer'.",
+      "examples": [
+        {"jp": "ここは きょうしつです。", "translation": "Bu yer sinf xonasi."},
+        {"jp": "しょくどうは どこですか。", "translation": "Oshxona qayerda?"}
+      ]
+    },
+    {
+      "title": "СУЩ は МЕСТО です (joy bildirish)",
+      "explanation": "Bu tuzilma biror narsa yoki odam qayerda joylashganini bildirish uchun ishlatiladi.",
+      "examples": [
+        {"jp": "うけつけは あそこです。", "translation": "Qabulxona - ana u yerda."},
+        {"jp": "エレベーターは そこです。", "translation": "Lift - o'sha yerda."}
+      ]
+    },
+    {
+      "title": "СУЩ1 の СУЩ2 (2-qo'llanilishi: qaysi tashkilotga tegishli)",
+      "explanation": "1-darsda o'rgangan 「の」zarrachasi bu yerda mahsulot yoki kishining qaysi kompaniya/tashkilotga tegishli ekanligini bildiradi.",
+      "examples": [
+        {"jp": "これは さくら会社の パソコンです。", "translation": "Bu Sakura kompaniyasining kompyuteri."}
+      ]
+    },
+    {
+      "title": "いくらですか (narx so'rash)",
+      "explanation": "「いくら」— narx so'rash uchun so'roq so'zi. Javobda son + えん (yen) ishlatiladi.",
+      "examples": [
+        {"jp": "この 本は いくらですか。……1,500円です。", "translation": "Bu kitob qancha turadi? — 1500 yen."}
+      ]
+    }
+  ],
+  "practice_items": [
+    {
+      "stage": 4,
+      "type": "fillBlank",
+      "content": {"sentence": "トイレは ＿＿ですか。", "hint": "qayer - so'roq olmoshi"},
+      "correct_answer": "どこ"
+    },
+    {
+      "stage": 4,
+      "type": "multipleChoice",
+      "content": {"question": "「この本は いくら＿。」to'g'ri to'ldiring:", "options": ["ですか", "です", "でした", "ません"]},
+      "correct_answer": "ですか"
+    },
+    {
+      "stage": 4,
+      "type": "multipleChoice",
+      "content": {"question": "「しょくどう＿ あそこです。」to'g'ri zarrachani tanlang:", "options": ["は", "を", "に", "で"]},
+      "correct_answer": "は",
+      "topic_tag": "particle_wa",
+      "mistake_explanation": {
+        "を": "「を」to'g'ridan-to'g'ri to'ldiruvchi uchun ishlatiladi, bu yerda kesim joy nomi, fe'l yo'q.",
+        "に": "「に」harakat yo'nalishi yoki vaqt uchun ishlatiladi, bu gapda ular yo'q.",
+        "で": "「で」harakat sodir bo'ladigan joy yoki vosita uchun ishlatiladi, bu yerda mavzu ko'rsatilyapti."
+      }
+    },
+    {
+      "stage": 4,
+      "type": "multipleChoice",
+      "content": {"question": "「これは さくら会社＿ パソコンです。」bo'sh joyni to'ldiring:", "options": ["の", "は", "を", "も"]},
+      "correct_answer": "の"
+    },
+    {
+      "stage": 5,
+      "type": "rearrange",
+      "content": {"words": ["うけつけは", "あそこ", "です"], "instruction": "So'zlarni to'g'ri tartibga tering"},
+      "correct_answer": "うけつけは あそこ です"
+    },
+    {
+      "stage": 5,
+      "type": "rearrange",
+      "content": {"words": ["この", "かさは", "いくらですか"], "instruction": "So'zlarni to'g'ri tartibga tering"},
+      "correct_answer": "この かさは いくらですか"
+    },
+    {
+      "stage": 6,
+      "type": "openEnded",
+      "content": {"prompt": "O'zingiz o'qiydigan bino ichidagi 3 ta joyni (きょうしつ, しょくどう, うけつけ va h.k.) ここ/そこ/あそこ bilan tasvirlab yozing."},
+      "correct_answer": null
+    },
+    {
+      "stage": 7,
+      "type": "openEnded",
+      "content": {"prompt": "Do'konda narx so'rash dialogini yozing: xaridor narsaning narxini so'raydi, sotuvchi javob beradi."},
+      "correct_answer": null
+    }
+  ],
+  "quiz_questions": [
+    {"question": "Gapiruvchiga yaqin joy uchun qaysi so'z ishlatiladi?", "options": ["そこ", "あそこ", "ここ", "どこ"], "correct_option_index": 2},
+    {"question": "「どこ」nima ma'noni bildiradi?", "options": ["Nima", "Kim", "Qayer", "Qachon"], "correct_option_index": 2},
+    {"question": "「しょくどう」ning tarjimasi:", "options": ["Sinf xonasi", "Oshxona", "Qabulxona", "Lift"], "correct_option_index": 1},
+    {"question": "«Qancha turadi?» — yaponcha qanday so'raladi?", "options": ["どこですか", "だれですか", "いくらですか", "なんですか"], "correct_option_index": 2},
+    {"question": "「うけつけ」ning ma'nosi:", "options": ["Qabulxona", "Sinf", "Kompaniya", "Lift"], "correct_option_index": 0},
+    {"question": "To'g'ri gapni tanlang:", "options": ["トイレは どこです。", "トイレは どこですか。", "トイレを どこですか。", "トイレ どこか。"], "correct_option_index": 1},
+    {"question": "「これは さくら会社の パソコンです。」 — kompyuter qaysi kompaniyaga tegishli?", "options": ["Aniq emas", "Sakura", "Fuji", "Yamada"], "correct_option_index": 1},
+    {"question": "「あそこ」qaysi holatda ishlatiladi?", "options": ["Gapiruvchiga yaqin joy", "Tinglovchiga yaqin joy", "Ikkalasidan uzoq joy", "Har qanday joy"], "correct_option_index": 2},
+    {"question": "「エレベーター」so'zi nimani bildiradi?", "options": ["Zinapoya", "Lift", "Eshik", "Deraza"], "correct_option_index": 1},
+    {"question": "«500 iyen» yaponchada qanday yoziladi?", "options": ["500じ", "500さい", "500えん", "500ふん"], "correct_option_index": 2}
+  ]
+}

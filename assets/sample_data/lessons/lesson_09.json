@@ -1,0 +1,122 @@
+{
+  "lesson": {
+    "id": 9,
+    "title": "9-dars: Nimani yoqtirasiz?",
+    "order_index": 9,
+    "book": 1
+  },
+  "vocabulary": [
+    {"kanji": "分かります", "kana": "わかります", "romaji": "wakarimasu", "translation_uz": "tushunmoq", "translation_ru": "понимать", "example_sentence": "わたしは にほんごが わかります。", "example_sentence_romaji": "Watashi wa nihongo ga wakarimasu."},
+    {"kanji": "好き[な]", "kana": "すき[な]", "romaji": "suki[na]", "translation_uz": "yoqtirmoq", "translation_ru": "любимый, нравится", "example_sentence": "わたしは サッカーが すきです。", "example_sentence_romaji": "Watashi wa sakkaa ga suki desu."},
+    {"kanji": "嫌い[な]", "kana": "きらい[な]", "romaji": "kirai[na]", "translation_uz": "yoqtirmaslik", "translation_ru": "нелюбимый, ненавистный", "example_sentence": "やさいが きらいです。", "example_sentence_romaji": "Yasai ga kirai desu."},
+    {"kanji": "上手[な]", "kana": "じょうず[な]", "romaji": "jouzu[na]", "translation_uz": "usta, mohir", "translation_ru": "умелый", "example_sentence": "アジズさんは うたが じょうずです。", "example_sentence_romaji": "Azizu-san wa uta ga jouzu desu."},
+    {"kanji": "下手[な]", "kana": "へた[な]", "romaji": "heta[na]", "translation_uz": "nomohir", "translation_ru": "неумелый", "example_sentence": "わたしは ダンスが へたです。", "example_sentence_romaji": "Watashi wa dansu ga heta desu."},
+    {"kanji": "音楽", "kana": "おんがく", "romaji": "ongaku", "translation_uz": "musiqa", "translation_ru": "музыка", "example_sentence": "おんがくが すきです。", "example_sentence_romaji": "Ongaku ga suki desu."},
+    {"kanji": "料理", "kana": "りょうり", "romaji": "ryouri", "translation_uz": "taom, oshxona", "translation_ru": "кухня, блюдо", "example_sentence": "にほんの りょうりが すきです。", "example_sentence_romaji": "Nihon no ryouri ga suki desu."},
+    {"kanji": "漢字", "kana": "かんじ", "romaji": "kanji", "translation_uz": "ieroglif", "translation_ru": "иероглиф", "example_sentence": "かんじが すこし わかります。", "example_sentence_romaji": "Kanji ga sukoshi wakarimasu."},
+    {"kanji": null, "kana": "すこし", "romaji": "sukoshi", "translation_uz": "biroz", "translation_ru": "немного", "example_sentence": "にほんごが すこし わかります。", "example_sentence_romaji": "Nihongo ga sukoshi wakarimasu."},
+    {"kanji": "全然", "kana": "ぜんぜん", "romaji": "zenzen", "translation_uz": "umuman (inkorda)", "translation_ru": "совсем не", "example_sentence": "かんじが ぜんぜん わかりません。", "example_sentence_romaji": "Kanji ga zenzen wakarimasen."},
+    {"kanji": null, "kana": "どうして", "romaji": "doushite", "translation_uz": "nega", "translation_ru": "почему", "example_sentence": "どうして にほんごを べんきょうしますか。", "example_sentence_romaji": "Doushite nihongo o benkyoushimasu ka."}
+  ],
+  "grammar": [
+    {
+      "title": "СУЩ が わかります／すきです／じょうずです",
+      "explanation": "「わかります」(tushunmoq), 「すきです」(yoqtirmoq), 「じょうずです」/「へたです」(mohir/nomohir bo'lmoq) kabi fe'l va sifatlar bilan obyekt 「が」zarrachasi bilan ko'rsatiladi (を emas).",
+      "examples": [
+        {"jp": "わたしは にほんごが わかります。", "translation": "Men yapon tilini tushunaman."},
+        {"jp": "アジズさんは サッカーが じょうずです。", "translation": "Aziz futbolda mohir."}
+      ]
+    },
+    {
+      "title": "よく／すこし／あまり／ぜんぜん (daraja naerchlari)",
+      "explanation": "Bu naerchlar fe'ldan oldin qo'yiladi va harakatning darajasini bildiradi: よく (yaxshi), すこし (biroz) — tasdiqda; あまり (unchalik), ぜんぜん (umuman) — inkorda.",
+      "examples": [
+        {"jp": "えいごが よく わかります。", "translation": "Ingliz tilini yaxshi tushunaman."},
+        {"jp": "かんじが ぜんぜん わかりません。", "translation": "Ieroglifni umuman tushunmayman."}
+      ]
+    },
+    {
+      "title": "～から、～ (sabab bildirish)",
+      "explanation": "「から」dan oldingi qism sababni, keyingi qism natijani bildiradi.",
+      "examples": [
+        {"jp": "じかんが ありませんから、テレビを みません。", "translation": "Vaqtim yo'qligi uchun televizor ko'rmayman."}
+      ]
+    },
+    {
+      "title": "どうして (nega)",
+      "explanation": "「どうして」so'roq so'zi sabab so'rash uchun ishlatiladi. Javobda 「から」bilan tugallanadi.",
+      "examples": [
+        {"jp": "どうして にほんごを べんきょうしますか。", "translation": "Nega yapon tilini o'rganyapsiz?"},
+        {"jp": "……にほんが すきですから。", "translation": "...Yaponiyani yoqtirganim uchun."}
+      ]
+    }
+  ],
+  "practice_items": [
+    {
+      "stage": 4,
+      "type": "fillBlank",
+      "content": {"sentence": "わたしは サッカー＿ すきです。", "hint": "yoqtirish obyektini bildiruvchi zarracha"},
+      "correct_answer": "が"
+    },
+    {
+      "stage": 4,
+      "type": "multipleChoice",
+      "content": {"question": "「にほんご＿ すこし わかります。」to'g'ri zarrachani tanlang:", "options": ["が", "を", "に", "は"]},
+      "correct_answer": "が",
+      "topic_tag": "particle_ga",
+      "mistake_explanation": {
+        "を": "「わかります」va 「すきです」kabi so'zlar bilan 「を」emas, 「が」ishlatiladi.",
+        "に": "「に」bu yerda mos emas, joy yoki vaqtni bildirmaydi.",
+        "は": "「は」mavzuni bildiradi, lekin bu gapda mavzu allaqachon boshqa joyda, obyekt esa 「が」talab qiladi."
+      }
+    },
+    {
+      "stage": 4,
+      "type": "multipleChoice",
+      "content": {"question": "«Umuman tushunmayman» - to'g'ri variant:", "options": ["すこし わかりません。", "よく わかりません。", "ぜんぜん わかりません。", "とても わかりません。"]},
+      "correct_answer": "ぜんぜん わかりません。"
+    },
+    {
+      "stage": 4,
+      "type": "multipleChoice",
+      "content": {"question": "「じかんが ありません＿、テレビを みません。」bo'sh joyni to'ldiring:", "options": ["から", "まで", "ので", "と"]},
+      "correct_answer": "から"
+    },
+    {
+      "stage": 5,
+      "type": "rearrange",
+      "content": {"words": ["アジズさんは", "サッカーが", "じょうずです"], "instruction": "So'zlarni to'g'ri tartibga tering"},
+      "correct_answer": "アジズさんは サッカーが じょうずです"
+    },
+    {
+      "stage": 5,
+      "type": "rearrange",
+      "content": {"words": ["にほんが", "すきですから", "にほんごを", "べんきょうします"], "instruction": "So'zlarni to'g'ri tartibga tering"},
+      "correct_answer": "にほんが すきですから にほんごを べんきょうします"
+    },
+    {
+      "stage": 6,
+      "type": "openEnded",
+      "content": {"prompt": "Nimalarni yoqtirishingizni va nimalarda mohir ekanligingizni (すき, じょうず) 3-4 gapda yozing."},
+      "correct_answer": null
+    },
+    {
+      "stage": 7,
+      "type": "openEnded",
+      "content": {"prompt": "Nega yapon tilini o'rganayotganingiz haqida do'stingiz bilan suhbat dialogini yozing (どうして / から ishlatib)."},
+      "correct_answer": null
+    }
+  ],
+  "quiz_questions": [
+    {"question": "「すきです」bilan qaysi zarracha ishlatiladi?", "options": ["を", "が", "に", "へ"], "correct_option_index": 1},
+    {"question": "「わかります」ning ma'nosi:", "options": ["Yoqtirmoq", "Tushunmoq", "Bilmoq (kasb)", "Ko'rmoq"], "correct_option_index": 1},
+    {"question": "«Umuman» ma'nosini bildiruvchi (inkorda ishlatiladigan) so'z:", "options": ["よく", "すこし", "ぜんぜん", "とても"], "correct_option_index": 2},
+    {"question": "「じょうず」ning tarjimasi:", "options": ["Nomohir", "Mohir, usta", "Yoqimsiz", "Qiyin"], "correct_option_index": 1},
+    {"question": "«Nega» so'rashda qaysi so'roq so'zi ishlatiladi?", "options": ["どこ", "だれ", "どうして", "いつ"], "correct_option_index": 2},
+    {"question": "«...uchun, ...sababli» ma'nosini beruvchi zarracha:", "options": ["まで", "から", "に", "で"], "correct_option_index": 1},
+    {"question": "「きらい」ning ma'nosi:", "options": ["Yoqtirmoq", "Yoqtirmaslik", "Mohir", "Nomohir"], "correct_option_index": 1},
+    {"question": "To'g'ri gapni tanlang:", "options": ["おんがくを すきです。", "おんがくが すきです。", "おんがくに すきです。", "おんがくは すきが です。"], "correct_option_index": 1},
+    {"question": "「へた」ning ma'nosi:", "options": ["Mohir", "Nomohir", "Yoqimli", "Qiyin"], "correct_option_index": 1},
+    {"question": "「かんじが すこし わかります。」jumlasidagi 「すこし」nima ma'no beradi?", "options": ["Umuman yo'q", "Juda yaxshi", "Biroz", "Har doim"], "correct_option_index": 2}
+  ]
+}

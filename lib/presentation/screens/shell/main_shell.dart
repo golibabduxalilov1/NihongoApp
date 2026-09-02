@@ -43,7 +43,7 @@ class _MainShellState extends State<MainShell> {
       backgroundColor: AppColors.cream,
       body: IndexedStack(index: _currentIndex, children: _screens),
       bottomNavigationBar: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: AppColors.white,
           border: Border(top: BorderSide(color: AppColors.border, width: 1)),
         ),

@@ -1,0 +1,125 @@
+{
+  "lesson": {
+    "id": 1,
+    "title": "1-dars: Tanishuv",
+    "order_index": 1,
+    "book": 1
+  },
+  "vocabulary": [
+    {"kanji": null, "kana": "わたし", "romaji": "watashi", "translation_uz": "men", "translation_ru": "я", "example_sentence": "わたしは アジズです。", "example_sentence_romaji": "Watashi wa Azizu desu."},
+    {"kanji": null, "kana": "あなた", "romaji": "anata", "translation_uz": "siz", "translation_ru": "вы", "example_sentence": "あなたは がくせいですか。", "example_sentence_romaji": "Anata wa gakusei desu ka."},
+    {"kanji": "あの人", "kana": "あのひと", "romaji": "ano hito", "translation_uz": "u kishi (uzoqdagi)", "translation_ru": "тот человек", "example_sentence": "あの人は せんせいです。", "example_sentence_romaji": "Ano hito wa sensei desu."},
+    {"kanji": "学生", "kana": "がくせい", "romaji": "gakusei", "translation_uz": "talaba, o'quvchi", "translation_ru": "студент", "example_sentence": "アジズさんは 学生です。", "example_sentence_romaji": "Azizu-san wa gakusei desu."},
+    {"kanji": "先生", "kana": "せんせい", "romaji": "sensei", "translation_uz": "o'qituvchi", "translation_ru": "учитель", "example_sentence": "マリカさんは 先生です。", "example_sentence_romaji": "Marika-san wa sensei desu."},
+    {"kanji": "会社員", "kana": "かいしゃいん", "romaji": "kaishain", "translation_uz": "kompaniya xodimi", "translation_ru": "служащий фирмы", "example_sentence": "たなかさんは 会社員です。", "example_sentence_romaji": "Tanaka-san wa kaishain desu."},
+    {"kanji": "医者", "kana": "いしゃ", "romaji": "isha", "translation_uz": "shifokor", "translation_ru": "врач", "example_sentence": "わたしの あねは 医者です。", "example_sentence_romaji": "Watashi no ane wa isha desu."},
+    {"kanji": "銀行員", "kana": "ぎんこういん", "romaji": "ginkouin", "translation_uz": "bank xodimi", "translation_ru": "банковский служащий", "example_sentence": "やまださんは 銀行員です。", "example_sentence_romaji": "Yamada-san wa ginkouin desu."},
+    {"kanji": "大学", "kana": "だいがく", "romaji": "daigaku", "translation_uz": "universitet", "translation_ru": "университет", "example_sentence": "アジズさんは さくら大学の 学生です。", "example_sentence_romaji": "Azizu-san wa Sakura daigaku no gakusei desu."},
+    {"kanji": null, "kana": "だれ", "romaji": "dare", "translation_uz": "kim", "translation_ru": "кто", "example_sentence": "あの人は だれですか。", "example_sentence_romaji": "Ano hito wa dare desu ka."},
+    {"kanji": "-歳", "kana": "-さい", "romaji": "-sai", "translation_uz": "... yosh", "translation_ru": "... лет", "example_sentence": "わたしは 20歳です。", "example_sentence_romaji": "Watashi wa nijussai desu."},
+    {"kanji": null, "kana": "はじめまして", "romaji": "hajimemashite", "translation_uz": "tanishganimdan xursandman", "translation_ru": "очень приятно (при знакомстве)", "example_sentence": "はじめまして。よろしく おねがいします。", "example_sentence_romaji": "Hajimemashite. Yoroshiku onegaishimasu."}
+  ],
+  "grammar": [
+    {
+      "title": "СУЩ1 は СУЩ2 です (A - B hisoblanadi)",
+      "explanation": "Bu yapon tilidagi eng asosiy gap qurilishi. 「は」zarrachasi (o'qilishi 'wa') gapning mavzusini bildiradi, 「です」esa ega bilan kesimni bog'lovchi, xushmuomalalik bildiruvchi qo'shimcha hisoblanadi.",
+      "examples": [
+        {"jp": "わたしは アジズです。", "translation": "Men Azizman."},
+        {"jp": "アジズさんは 学生です。", "translation": "Aziz - talaba."},
+        {"jp": "たなかさんは 会社員です。", "translation": "Tanaka - kompaniya xodimi."}
+      ]
+    },
+    {
+      "title": "СУЩ1 は СУЩ2 では ありません (A - B emas)",
+      "explanation": "Inkor shakli 「です」o'rniga 「では ありません」qo'yish orqali hosil qilinadi. Og'zaki nutqda ko'pincha 「じゃ ありません」ishlatiladi.",
+      "examples": [
+        {"jp": "わたしは せんせいでは ありません。", "translation": "Men o'qituvchi emasman."},
+        {"jp": "マリカさんは 医者じゃ ありません。", "translation": "Malika shifokor emas."}
+      ]
+    },
+    {
+      "title": "СУЩ1 は СУЩ2 ですか / СУЩ も (savol va \"ham\")",
+      "explanation": "Savol gapi tuzish uchun gap oxiriga 「か」qo'shiladi, savol belgisi shart emas. Oldingi mavzu bilan bir xil fikrni bildirish uchun 「は」o'rniga 「も」(ham) ishlatiladi.",
+      "examples": [
+        {"jp": "たなかさんは 会社員ですか。……はい、会社員です。", "translation": "Tanaka kompaniya xodimimi? — Ha, kompaniya xodimi."},
+        {"jp": "アジズさんも 学生です。", "translation": "Aziz ham talaba."}
+      ]
+    },
+    {
+      "title": "СУЩ1 の СУЩ2 (mansublik)",
+      "explanation": "「の」zarrachasi ikkita otni bog'laydi: birinchi ot ikkinchisiga egalik yoki mansublikni bildiradi (masalan, qaysi tashkilotga tegishli ekanligini).",
+      "examples": [
+        {"jp": "アジズさんは さくら大学の 学生です。", "translation": "Aziz Sakura universitetining talabasi."},
+        {"jp": "やまださんは にほん銀行の 銀行員です。", "translation": "Yamada Nihon bankining xodimi."}
+      ]
+    }
+  ],
+  "practice_items": [
+    {
+      "stage": 4,
+      "type": "fillBlank",
+      "content": {"sentence": "わたし＿ 学生です。", "hint": "Mavzu zarrachasini qo'ying"},
+      "correct_answer": "は"
+    },
+    {
+      "stage": 4,
+      "type": "multipleChoice",
+      "content": {"question": "「アジズさんは 学生＿。」to'g'ri to'ldiring:", "options": ["です", "ですか", "ました", "ません"]},
+      "correct_answer": "です"
+    },
+    {
+      "stage": 4,
+      "type": "multipleChoice",
+      "content": {"question": "「わたし＿ がくせいです。」to'g'ri zarrachani tanlang:", "options": ["は", "が", "を", "に"]},
+      "correct_answer": "は",
+      "topic_tag": "particle_wa",
+      "mistake_explanation": {
+        "が": "「が」emas — bu yerda gap mavzusi (kim ekanligi) haqida gapirilyapti, shuning uchun mavzu zarrachasi「は」kerak.",
+        "を": "「を」to'g'ridan-to'g'ri to'ldiruvchi zarrachasi. Bu gapda to'ldiruvchi yo'q, shuning uchun mos emas.",
+        "に": "「に」odatda yo'nalish, vaqt yoki joy uchun ishlatiladi. Bu gapda ular yo'q."
+      }
+    },
+    {
+      "stage": 4,
+      "type": "multipleChoice",
+      "content": {"question": "「マリカさんは いしゃ＿ ありません。」bo'sh joyni to'ldiring:", "options": ["では", "です", "でした", "も"]},
+      "correct_answer": "では"
+    },
+    {
+      "stage": 5,
+      "type": "rearrange",
+      "content": {"words": ["わたしは", "がくせいでは", "ありません"], "instruction": "So'zlarni to'g'ri tartibga tering"},
+      "correct_answer": "わたしは がくせいでは ありません"
+    },
+    {
+      "stage": 5,
+      "type": "rearrange",
+      "content": {"words": ["アジズさんは", "さくら大学の", "がくせいです"], "instruction": "So'zlarni to'g'ri tartibga tering"},
+      "correct_answer": "アジズさんは さくら大学の がくせいです"
+    },
+    {
+      "stage": 6,
+      "type": "openEnded",
+      "content": {"prompt": "O'zingizni yapon tilida tanishtiring: ismingiz va kasbingiz (masalan がくせい, せんせい, かいしゃいん) haqida 2 gap yozing."},
+      "correct_answer": null
+    },
+    {
+      "stage": 7,
+      "type": "openEnded",
+      "content": {"prompt": "Qisqa tanishuv dialogini yozing: ikkita odam bir-biri bilan tanishadi, ism va kasbini so'raydi."},
+      "correct_answer": null
+    }
+  ],
+  "quiz_questions": [
+    {"question": "「はじめまして」nima ma'noni bildiradi?", "options": ["Tanishganimdan xursandman", "Rahmat", "Kechirasiz", "Xayr"], "correct_option_index": 0},
+    {"question": "「学生」so'zining o'qilishi qanday?", "options": ["せんせい", "がくせい", "かいしゃいん", "いしゃ"], "correct_option_index": 1},
+    {"question": "To'g'ri gapni tanlang:", "options": ["わたしは がくせいです。", "わたしを がくせいです。", "わたしに がくせいです。", "わたしが がくせいます。"], "correct_option_index": 0},
+    {"question": "Inkor shaklda qaysi variant to'g'ri?", "options": ["せんせいでは ありません", "せんせいます ありません", "せんせいでした ありません", "せんせいく ありません"], "correct_option_index": 0},
+    {"question": "「銀行員」ning tarjimasi:", "options": ["Talaba", "O'qituvchi", "Bank xodimi", "Shifokor"], "correct_option_index": 2},
+    {"question": "「医者」kim?", "options": ["O'qituvchi", "Talaba", "Kompaniya xodimi", "Shifokor"], "correct_option_index": 3},
+    {"question": "「は」zarrachasi nima vazifa bajaradi?", "options": ["Mavzuni ko'rsatadi", "O'rinni ko'rsatadi", "Vaqtni ko'rsatadi", "Egalikni ko'rsatadi"], "correct_option_index": 0},
+    {"question": "「アジズさんも 学生です。」jumlasidagi 「も」nima ma'no beradi?", "options": ["Emas", "Ham", "Faqat", "Lekin"], "correct_option_index": 1},
+    {"question": "「アジズさんは さくら大学の 学生です。」— Aziz qayerning talabasi?", "options": ["Tokio universiteti", "Sakura universiteti", "Kyoto universiteti", "Fuji universiteti"], "correct_option_index": 1},
+    {"question": "「です」so'zlashuvda qanday vazifa bajaradi?", "options": ["Fe'l", "Ega bilan kesimni bog'laydi", "Savol yasaydi", "Ko'plik yasaydi"], "correct_option_index": 1}
+  ]
+}

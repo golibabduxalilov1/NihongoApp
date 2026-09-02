@@ -213,7 +213,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           borderRadius: BorderRadius.circular(18),
                         ),
                         elevation: 4,
-                        shadowColor: AppColors.primary.withOpacity(0.35),
+                        shadowColor: AppColors.primary.withValues(alpha: 0.35),
                       ),
                       child: Text(
                         isLastPage ? "Boshlash" : "Davom etish",
@@ -288,7 +288,7 @@ class _BookPainter extends CustomPainter {
       Offset(cx, bookRect.top),
       Offset(cx, bookRect.bottom),
       Paint()
-        ..color = AppColors.peach.withOpacity(0.8)
+        ..color = AppColors.peach.withValues(alpha: 0.8)
         ..strokeWidth = 2,
     );
 
@@ -298,8 +298,8 @@ class _BookPainter extends CustomPainter {
       ..strokeWidth = 4
       ..strokeCap = StrokeCap.round;
     canvas.drawLine(Offset(cx - 30, cy - 12), Offset(cx - 10, cy - 12), linePaint);
-    canvas.drawLine(Offset(cx - 30, cy), Offset(cx - 15, cy), linePaint..color = AppColors.primary.withOpacity(0.6));
-    canvas.drawLine(Offset(cx - 30, cy + 12), Offset(cx - 10, cy + 12), linePaint..color = AppColors.primary.withOpacity(0.4));
+    canvas.drawLine(Offset(cx - 30, cy), Offset(cx - 15, cy), linePaint..color = AppColors.primary.withValues(alpha: 0.6));
+    canvas.drawLine(Offset(cx - 30, cy + 12), Offset(cx - 10, cy + 12), linePaint..color = AppColors.primary.withValues(alpha: 0.4));
 
     // O'ng tomon - hinomaru doira
     canvas.drawCircle(Offset(cx + 20, cy + 5), 16, Paint()..color = AppColors.primary);

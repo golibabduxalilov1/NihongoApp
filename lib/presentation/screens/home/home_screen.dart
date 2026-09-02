@@ -22,10 +22,19 @@ class HomeScreen extends ConsumerWidget {
         children: [
           _HomeHeader(statsAsync: statsAsync),
           Expanded(
-            child: lessonsAsync.when(
-              loading: () => const Center(child: CircularProgressIndicator()),
-              error: (err, stack) => Center(child: Text('Xatolik: $err')),
-              data: (lessons) => _HomeBody(lessons: lessons, statsAsync: statsAsync),
+            child: RefreshIndicator(
+              onRefresh: () async {
+                ref.invalidate(lessonsListProvider);
+                ref.invalidate(userStatsProvider);
+                ref.invalidate(lessonUnlockedProvider);
+                await ref.read(lessonsListProvider.future);
+              },
+              child: lessonsAsync.when(
+                loading: () => const Center(child: CircularProgressIndicator()),
+                error: (err, stack) => Center(child: Text('Xatolik: $err')),
+                data: (lessons) =>
+                    _HomeBody(lessons: lessons, statsAsync: statsAsync),
+              ),
             ),
           ),
         ],
@@ -43,7 +52,8 @@ class _HomeHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final streak = statsAsync.maybeWhen(data: (s) => s.currentStreak, orElse: () => 0);
+    final streak =
+        statsAsync.maybeWhen(data: (s) => s.currentStreak, orElse: () => 0);
 
     return Padding(
       padding: const EdgeInsets.fromLTRB(24, 20, 24, 16),
@@ -65,9 +75,12 @@ class _HomeHeader extends StatelessWidget {
             ),
             child: Row(
               children: [
-                const Icon(Icons.local_fire_department, color: AppColors.gold, size: 18),
+                const Icon(Icons.local_fire_department,
+                    color: AppColors.gold, size: 18),
                 const SizedBox(width: 4),
-                Text('$streak', style: AppTypography.buttonSecondary.copyWith(color: AppColors.primaryDark)),
+                Text('$streak',
+                    style: AppTypography.buttonSecondary
+                        .copyWith(color: AppColors.primaryDark)),
               ],
             ),
           ),
@@ -84,10 +97,13 @@ class _HomeBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final inProgress = lessons.where((l) => l.status == LessonCompletionStatus.inProgress).toList();
+    final inProgress = lessons
+        .where((l) => l.status == LessonCompletionStatus.inProgress)
+        .toList();
     final currentLesson = inProgress.isNotEmpty ? inProgress.first : null;
 
     return ListView(
+      physics: const AlwaysScrollableScrollPhysics(),
       padding: const EdgeInsets.fromLTRB(24, 4, 24, 24),
       children: [
         _DailyGoalCard(statsAsync: statsAsync),
@@ -131,7 +147,8 @@ class _DailyGoalCard extends StatelessWidget {
       error: (_, __) => const SizedBox.shrink(),
       data: (stats) {
         final progress = stats.todayProgress;
-        final remaining = (stats.dailyGoalMinutes - stats.minutesStudiedToday).clamp(0, stats.dailyGoalMinutes);
+        final remaining = (stats.dailyGoalMinutes - stats.minutesStudiedToday)
+            .clamp(0, stats.dailyGoalMinutes);
 
         return Container(
           padding: const EdgeInsets.all(20),
@@ -148,11 +165,12 @@ class _DailyGoalCard extends StatelessWidget {
                   Text(
                     'BUGUNGI MAQSAD',
                     style: AppTypography.bodySmall.copyWith(
-                      color: Colors.white.withOpacity(0.85),
+                      color: Colors.white.withValues(alpha: 0.85),
                       fontWeight: FontWeight.w700,
                     ),
                   ),
-                  Text('${(progress * 100).round()}%', style: AppTypography.goalPercent),
+                  Text('${(progress * 100).round()}%',
+                      style: AppTypography.goalPercent),
                 ],
               ),
               const SizedBox(height: 14),
@@ -161,7 +179,7 @@ class _DailyGoalCard extends StatelessWidget {
                 child: LinearProgressIndicator(
                   value: progress,
                   minHeight: 10,
-                  backgroundColor: Colors.white.withOpacity(0.25),
+                  backgroundColor: Colors.white.withValues(alpha: 0.25),
                   valueColor: const AlwaysStoppedAnimation(Colors.white),
                 ),
               ),
@@ -170,7 +188,8 @@ class _DailyGoalCard extends StatelessWidget {
                 stats.goalReachedToday
                     ? "Bugungi maqsadga yetdingiz! 🎉"
                     : '${stats.minutesStudiedToday} / ${stats.dailyGoalMinutes} daqiqa · yana $remaining daqiqa qoldi',
-                style: AppTypography.bodySmall.copyWith(color: Colors.white.withOpacity(0.9)),
+                style: AppTypography.bodySmall
+                    .copyWith(color: Colors.white.withValues(alpha: 0.9)),
               ),
             ],
           ),
@@ -204,7 +223,7 @@ class _LessonCard extends ConsumerWidget {
               border: Border.all(color: AppColors.border),
               boxShadow: [
                 BoxShadow(
-                  color: AppColors.ink.withOpacity(0.06),
+                  color: AppColors.ink.withValues(alpha: 0.06),
                   blurRadius: 16,
                   offset: const Offset(0, 6),
                 ),
@@ -215,7 +234,8 @@ class _LessonCard extends ConsumerWidget {
               onTap: isUnlocked
                   ? () => Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (_) => LessonScreen(lessonId: lesson.id)),
+                        MaterialPageRoute(
+                            builder: (_) => LessonScreen(lessonId: lesson.id)),
                       )
                   : null,
               child: Row(
@@ -228,7 +248,8 @@ class _LessonCard extends ConsumerWidget {
                       children: [
                         Text(lesson.title, style: AppTypography.lessonTitle),
                         const SizedBox(height: 4),
-                        Text(_subtitle(isUnlocked), style: AppTypography.lessonSubtitle),
+                        Text(_subtitle(isUnlocked),
+                            style: AppTypography.lessonSubtitle),
                         if (isCurrent) ...[
                           const SizedBox(height: 6),
                           _StageMiniProgress(currentStage: lesson.currentStage),
@@ -239,7 +260,8 @@ class _LessonCard extends ConsumerWidget {
                   if (isUnlocked)
                     const Icon(Icons.chevron_right, color: AppColors.inkFaint)
                   else
-                    const Icon(Icons.lock_outline, color: AppColors.inkFaint, size: 18),
+                    const Icon(Icons.lock_outline,
+                        color: AppColors.inkFaint, size: 18),
                 ],
               ),
             ),
@@ -275,7 +297,8 @@ class _LessonCard extends ConsumerWidget {
     return Container(
       width: 52,
       height: 52,
-      decoration: BoxDecoration(color: bg, borderRadius: BorderRadius.circular(16)),
+      decoration:
+          BoxDecoration(color: bg, borderRadius: BorderRadius.circular(16)),
       child: Icon(icon, color: AppColors.ink, size: 22),
     );
   }
@@ -305,7 +328,8 @@ class _StageMiniProgress extends StatelessWidget {
           child: Container(
             width: 14,
             height: 4,
-            decoration: BoxDecoration(color: color, borderRadius: BorderRadius.circular(2)),
+            decoration: BoxDecoration(
+                color: color, borderRadius: BorderRadius.circular(2)),
           ),
         );
       }),

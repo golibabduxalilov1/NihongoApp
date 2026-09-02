@@ -75,18 +75,20 @@ class _QuizScreenState extends ConsumerState<QuizScreen> {
               style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600)),
           const SizedBox(height: 20),
           Expanded(
-            child: ListView.builder(
-              itemCount: q.options.length,
-              itemBuilder: (context, i) {
-                return RadioListTile<int>(
-                  value: i,
-                  groupValue: selected,
-                  title: Text(q.options[i]),
-                  onChanged: (value) {
-                    setState(() => _answers[q.id] = value!);
-                  },
-                );
+            child: RadioGroup<int>(
+              groupValue: selected,
+              onChanged: (value) {
+                setState(() => _answers[q.id] = value!);
               },
+              child: ListView.builder(
+                itemCount: q.options.length,
+                itemBuilder: (context, i) {
+                  return RadioListTile<int>(
+                    value: i,
+                    title: Text(q.options[i]),
+                  );
+                },
+              ),
             ),
           ),
           ElevatedButton(

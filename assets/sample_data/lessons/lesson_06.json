@@ -1,0 +1,122 @@
+{
+  "lesson": {
+    "id": 6,
+    "title": "6-dars: Nima yeysiz?",
+    "order_index": 6,
+    "book": 1
+  },
+  "vocabulary": [
+    {"kanji": "食べます", "kana": "たべます", "romaji": "tabemasu", "translation_uz": "yemoq", "translation_ru": "есть", "example_sentence": "わたしは ごはんを たべます。", "example_sentence_romaji": "Watashi wa gohan o tabemasu."},
+    {"kanji": "飲みます", "kana": "のみます", "romaji": "nomimasu", "translation_uz": "ichmoq", "translation_ru": "пить", "example_sentence": "おちゃを のみます。", "example_sentence_romaji": "Ocha o nomimasu."},
+    {"kanji": "見ます", "kana": "みます", "romaji": "mimasu", "translation_uz": "ko'rmoq, tomosha qilmoq", "translation_ru": "смотреть", "example_sentence": "えいがを みます。", "example_sentence_romaji": "Eiga o mimasu."},
+    {"kanji": "読みます", "kana": "よみます", "romaji": "yomimasu", "translation_uz": "o'qimoq", "translation_ru": "читать", "example_sentence": "ほんを よみます。", "example_sentence_romaji": "Hon o yomimasu."},
+    {"kanji": "書きます", "kana": "かきます", "romaji": "kakimasu", "translation_uz": "yozmoq", "translation_ru": "писать", "example_sentence": "てがみを かきます。", "example_sentence_romaji": "Tegami o kakimasu."},
+    {"kanji": "買います", "kana": "かいます", "romaji": "kaimasu", "translation_uz": "sotib olmoq", "translation_ru": "покупать", "example_sentence": "パンを かいます。", "example_sentence_romaji": "Pan o kaimasu."},
+    {"kanji": "会います", "kana": "あいます", "romaji": "aimasu", "translation_uz": "uchrashmoq", "translation_ru": "встречаться", "example_sentence": "ともだちに あいます。", "example_sentence_romaji": "Tomodachi ni aimasu."},
+    {"kanji": "水", "kana": "みず", "romaji": "mizu", "translation_uz": "suv", "translation_ru": "вода", "example_sentence": "みずを のみます。", "example_sentence_romaji": "Mizu o nomimasu."},
+    {"kanji": "魚", "kana": "さかな", "romaji": "sakana", "translation_uz": "baliq", "translation_ru": "рыба", "example_sentence": "さかなを たべます。", "example_sentence_romaji": "Sakana o tabemasu."},
+    {"kanji": null, "kana": "いっしょに", "romaji": "issho ni", "translation_uz": "birga", "translation_ru": "вместе", "example_sentence": "いっしょに ひるごはんを たべませんか。", "example_sentence_romaji": "Issho ni hirugohan o tabemasen ka."},
+    {"kanji": null, "kana": "ときどき", "romaji": "tokidoki", "translation_uz": "ba'zan", "translation_ru": "иногда", "example_sentence": "ときどき えいがを みます。", "example_sentence_romaji": "Tokidoki eiga o mimasu."}
+  ],
+  "grammar": [
+    {
+      "title": "СУЩ を ГЛАГ (o'timli fe'l)",
+      "explanation": "「を」zarrachasi fe'lning to'g'ridan-to'g'ri to'ldiruvchisini bildiradi (fe'l ta'sir qiladigan narsa).",
+      "examples": [
+        {"jp": "ごはんを たべます。", "translation": "Ovqat yeyman."},
+        {"jp": "ほんを よみます。", "translation": "Kitob o'qiyman."}
+      ]
+    },
+    {
+      "title": "СУЩ (joy) で ГЛАГ (harakat sodir bo'ladigan joy)",
+      "explanation": "「で」zarrachasi harakat qayerda sodir bo'layotganini bildiradi (5-darsdagi transport ma'nosidan farqli, bu yerda 'joy' ma'nosida).",
+      "examples": [
+        {"jp": "しょくどうで ごはんを たべます。", "translation": "Oshxonada ovqat yeyman."},
+        {"jp": "としょかんで ほんを よみます。", "translation": "Kutubxonada kitob o'qiyman."}
+      ]
+    },
+    {
+      "title": "ГЛАГませんか (taklif qilish)",
+      "explanation": "Fe'lning inkor shakliga savol qo'shib, muloyim taklif yasaladi — 'qilmaysizmi?' ma'nosida.",
+      "examples": [
+        {"jp": "いっしょに ひるごはんを たべませんか。", "translation": "Birga tushlik qilmaymizmi?"},
+        {"jp": "……ええ、たべましょう。", "translation": "...Ha, yeylik."}
+      ]
+    },
+    {
+      "title": "ГЛАГましょう (taklif/taklifga javob)",
+      "explanation": "「ましょう」shakli 'qilaylik' degan taklifni yoki taklifga rozilik bildirishni ifodalaydi.",
+      "examples": [
+        {"jp": "ちょっと やすみましょう。", "translation": "Bir oz dam olaylik."}
+      ]
+    }
+  ],
+  "practice_items": [
+    {
+      "stage": 4,
+      "type": "fillBlank",
+      "content": {"sentence": "ごはん＿ たべます。", "hint": "to'g'ridan-to'g'ri to'ldiruvchi zarracha"},
+      "correct_answer": "を"
+    },
+    {
+      "stage": 4,
+      "type": "multipleChoice",
+      "content": {"question": "「としょかん＿ ほんを よみます。」to'g'ri zarrachani tanlang:", "options": ["で", "を", "へ", "と"]},
+      "correct_answer": "で",
+      "topic_tag": "particle_de",
+      "mistake_explanation": {
+        "を": "「を」to'ldiruvchi uchun ishlatiladi (よみます nimani? — ほんを), joy uchun 「で」kerak.",
+        "へ": "「へ」harakat yo'nalishini bildiradi, bu yerda esa harakat sodir bo'ladigan joy ko'rsatilyapti.",
+        "と": "「と」birga harakat qilinayotgan kishini bildiradi, joy uchun emas."
+      }
+    },
+    {
+      "stage": 4,
+      "type": "multipleChoice",
+      "content": {"question": "«Birga ovqat yemaymizmi?» - to'g'ri variant:", "options": ["いっしょに たべます。", "いっしょに たべません。", "いっしょに たべませんか。", "いっしょに たべました。"]},
+      "correct_answer": "いっしょに たべませんか。"
+    },
+    {
+      "stage": 4,
+      "type": "multipleChoice",
+      "content": {"question": "「ともだち＿ あいます。」to'g'ri zarrachani tanlang (uchrashmoq fe'li bilan):", "options": ["に", "を", "で", "は"]},
+      "correct_answer": "に"
+    },
+    {
+      "stage": 5,
+      "type": "rearrange",
+      "content": {"words": ["わたしは", "しょくどうで", "ごはんを", "たべます"], "instruction": "So'zlarni to'g'ri tartibga tering"},
+      "correct_answer": "わたしは しょくどうで ごはんを たべます"
+    },
+    {
+      "stage": 5,
+      "type": "rearrange",
+      "content": {"words": ["いっしょに", "ひるごはんを", "たべませんか"], "instruction": "So'zlarni to'g'ri tartibga tering"},
+      "correct_answer": "いっしょに ひるごはんを たべませんか"
+    },
+    {
+      "stage": 6,
+      "type": "openEnded",
+      "content": {"prompt": "Kecha nima yeganingizni, ichganingizni va nima qilganingizni 3-4 gapda yozing."},
+      "correct_answer": null
+    },
+    {
+      "stage": 7,
+      "type": "openEnded",
+      "content": {"prompt": "Do'stingizni birga ovqatlanishga taklif qilish dialogini yozing (ませんか va ましょう ishlatib)."},
+      "correct_answer": null
+    }
+  ],
+  "quiz_questions": [
+    {"question": "「たべます」ning ma'nosi:", "options": ["Ichmoq", "Yemoq", "Ko'rmoq", "O'qimoq"], "correct_option_index": 1},
+    {"question": "To'g'ridan-to'g'ri to'ldiruvchi zarrachasi qaysi?", "options": ["は", "が", "を", "に"], "correct_option_index": 2},
+    {"question": "«Kutubxonada kitob o'qiyman» - to'g'ri gap:", "options": ["としょかんへ ほんを よみます。", "としょかんで ほんを よみます。", "としょかんを ほんで よみます。", "としょかんに ほんが よみます。"], "correct_option_index": 1},
+    {"question": "「ませんか」qanday ma'no beradi?", "options": ["Buyruq", "Taklif", "Inkor", "O'tgan zamon"], "correct_option_index": 1},
+    {"question": "「かきます」so'zining ma'nosi:", "options": ["O'qimoq", "Yozmoq", "Ko'rmoq", "Sotib olmoq"], "correct_option_index": 1},
+    {"question": "«Bir oz dam olaylik» - to'g'ri gap:", "options": ["ちょっと やすみます。", "ちょっと やすみません。", "ちょっと やすみましょう。", "ちょっと やすみますか。"], "correct_option_index": 2},
+    {"question": "「あいます」fe'li bilan qaysi zarracha ishlatiladi?", "options": ["を", "で", "に", "へ"], "correct_option_index": 2},
+    {"question": "「ときどき」ning tarjimasi:", "options": ["Har doim", "Hech qachon", "Ba'zan", "Tez-tez"], "correct_option_index": 2},
+    {"question": "「みます」ning ma'nosi:", "options": ["Yozmoq", "O'qimoq", "Ko'rmoq", "Sotib olmoq"], "correct_option_index": 2},
+    {"question": "«Suv ichaman» — to'g'ri gap:", "options": ["みずが のみます。", "みずを のみます。", "みずに のみます。", "みずで のみます。"], "correct_option_index": 1}
+  ]
+}

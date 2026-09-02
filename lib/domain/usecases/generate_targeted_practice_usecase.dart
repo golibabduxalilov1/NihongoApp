@@ -21,7 +21,7 @@ class GenerateTargetedPracticeUseCase {
   /// tartibda emas, tasodifiy aralashtirilgan holda qaytaradi (takrorlash
   /// samaradorligi uchun).
   Future<List<PracticeItem>> call(String topicTag, {int maxItems = 10}) async {
-    final mistakes = await mistakeRepository.getMistakesForLesson(0); // barcha darslar bo'yicha filtrlanadi pastda
+    await mistakeRepository.getMistakesForLesson(0); // barcha darslar bo'yicha filtrlanadi pastda
     final relevantLessonIds = <int>{};
 
     // Xato jurnalidan shu mavzuga tegishli darslarni topamiz

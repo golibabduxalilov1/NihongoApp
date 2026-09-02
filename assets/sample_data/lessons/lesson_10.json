@@ -1,0 +1,123 @@
+{
+  "lesson": {
+    "id": 10,
+    "title": "10-dars: Bu yerda nima bor?",
+    "order_index": 10,
+    "book": 1
+  },
+  "vocabulary": [
+    {"kanji": null, "kana": "あります", "romaji": "arimasu", "translation_uz": "bor (jonsiz narsa)", "translation_ru": "быть, находиться (о неодушевлённых)", "example_sentence": "つくえの上に 本が あります。", "example_sentence_romaji": "Tsukue no ue ni hon ga arimasu."},
+    {"kanji": null, "kana": "います", "romaji": "imasu", "translation_uz": "bor (jonli narsa)", "translation_ru": "быть, находиться (об одушевлённых)", "example_sentence": "きょうしつに 学生が います。", "example_sentence_romaji": "Kyoushitsu ni gakusei ga imasu."},
+    {"kanji": "男の人", "kana": "おとこのひと", "romaji": "otoko no hito", "translation_uz": "erkak", "translation_ru": "мужчина", "example_sentence": "あそこに 男の人が います。", "example_sentence_romaji": "Asoko ni otoko no hito ga imasu."},
+    {"kanji": "女の人", "kana": "おんなのひと", "romaji": "onna no hito", "translation_uz": "ayol", "translation_ru": "женщина", "example_sentence": "受付に 女の人が います。", "example_sentence_romaji": "Uketsuke ni onna no hito ga imasu."},
+    {"kanji": "犬", "kana": "いぬ", "romaji": "inu", "translation_uz": "it", "translation_ru": "собака", "example_sentence": "にわに 犬が います。", "example_sentence_romaji": "Niwa ni inu ga imasu."},
+    {"kanji": "猫", "kana": "ねこ", "romaji": "neko", "translation_uz": "mushuk", "translation_ru": "кошка", "example_sentence": "いすの下に 猫が います。", "example_sentence_romaji": "Isu no shita ni neko ga imasu."},
+    {"kanji": "上", "kana": "うえ", "romaji": "ue", "translation_uz": "usti, tepasi", "translation_ru": "верх, наверху", "example_sentence": "つくえの上に パソコンが あります。", "example_sentence_romaji": "Tsukue no ue ni pasokon ga arimasu."},
+    {"kanji": "下", "kana": "した", "romaji": "shita", "translation_uz": "osti, pasti", "translation_ru": "низ, внизу", "example_sentence": "テーブルの下に かばんが あります。", "example_sentence_romaji": "Teeburu no shita ni kaban ga arimasu."},
+    {"kanji": "中", "kana": "なか", "romaji": "naka", "translation_uz": "ichi", "translation_ru": "в, внутри", "example_sentence": "はこの中に てがみが あります。", "example_sentence_romaji": "Hako no naka ni tegami ga arimasu."},
+    {"kanji": "隣", "kana": "となり", "romaji": "tonari", "translation_uz": "yoni, qo'shnisi", "translation_ru": "рядом, по соседству", "example_sentence": "郵便局は 銀行の 隣に あります。", "example_sentence_romaji": "Yuubinkyoku wa ginkou no tonari ni arimasu."},
+    {"kanji": "公園", "kana": "こうえん", "romaji": "kouen", "translation_uz": "park", "translation_ru": "парк", "example_sentence": "こうえんに 木が たくさん あります。", "example_sentence_romaji": "Kouen ni ki ga takusan arimasu."}
+  ],
+  "grammar": [
+    {
+      "title": "СУЩ が あります／います (mavjudlik)",
+      "explanation": "Jonsiz narsalar uchun 「あります」, jonli mavjudotlar (odam, hayvon) uchun 「います」ishlatiladi. Mavjud narsa 「が」zarrachasi bilan ko'rsatiladi.",
+      "examples": [
+        {"jp": "つくえが あります。", "translation": "Stol bor."},
+        {"jp": "犬が います。", "translation": "It bor."}
+      ]
+    },
+    {
+      "title": "МЕСТО に СУЩ が あります／います",
+      "explanation": "Biror joyda nima yoki kim borligini bildirish uchun joy nomiga 「に」zarrachasi qo'shiladi.",
+      "examples": [
+        {"jp": "きょうしつに 学生が います。", "translation": "Sinfda talaba bor."},
+        {"jp": "はこの中に てがみが あります。", "translation": "Qutining ichida xat bor."}
+      ]
+    },
+    {
+      "title": "СУЩ は МЕСТО に あります／います",
+      "explanation": "Agar narsa/kishi allaqachon ma'lum bo'lsa, u mavzu bo'lib 「は」bilan boshiga chiqadi, joy esa 「に」bilan qoladi.",
+      "examples": [
+        {"jp": "郵便局は 銀行の隣に あります。", "translation": "Pochta banki yonida joylashgan."},
+        {"jp": "先生は きょうしつに います。", "translation": "O'qituvchi sinfda."}
+      ]
+    },
+    {
+      "title": "СУЩ1 の СУЩ2 (joylashuv: 上/下/中/隣 va h.k.)",
+      "explanation": "上, 下, 中, 隣 kabi joylashuv so'zlari otdir va 「の」orqali boshqa otga bog'lanadi, aniq joylashuvni bildiradi.",
+      "examples": [
+        {"jp": "つくえの上に 本が あります。", "translation": "Stol ustida kitob bor."},
+        {"jp": "いすの下に 猫が います。", "translation": "Stul ostida mushuk bor."}
+      ]
+    }
+  ],
+  "practice_items": [
+    {
+      "stage": 4,
+      "type": "fillBlank",
+      "content": {"sentence": "きょうしつに 学生が ＿＿。", "hint": "jonli mavjudot uchun fe'l"},
+      "correct_answer": "います"
+    },
+    {
+      "stage": 4,
+      "type": "multipleChoice",
+      "content": {"question": "「つくえの上に 本＿ あります。」to'g'ri zarrachani tanlang:", "options": ["が", "は", "を", "に"]},
+      "correct_answer": "が",
+      "topic_tag": "particle_ga",
+      "mistake_explanation": {
+        "は": "「は」mavzu allaqachon ma'lum bo'lganda ishlatiladi, bu yerda yangi ma'lumot berilyapti, shuning uchun 「が」kerak.",
+        "を": "「を」to'g'ridan-to'g'ri to'ldiruvchi uchun ishlatiladi, あります fe'li bilan emas.",
+        "に": "「に」joy uchun allaqachon ishlatilgan (つくえの上に), takrorlanmaydi."
+      }
+    },
+    {
+      "stage": 4,
+      "type": "multipleChoice",
+      "content": {"question": "Jonsiz narsa uchun qaysi fe'l ishlatiladi?", "options": ["います", "あります", "いきます", "きます"]},
+      "correct_answer": "あります"
+    },
+    {
+      "stage": 4,
+      "type": "multipleChoice",
+      "content": {"question": "「郵便局は 銀行の＿に あります。」bo'sh joyni to'ldiring:", "options": ["隣", "中", "上", "下"]},
+      "correct_answer": "隣"
+    },
+    {
+      "stage": 5,
+      "type": "rearrange",
+      "content": {"words": ["つくえの", "上に", "パソコンが", "あります"], "instruction": "So'zlarni to'g'ri tartibga tering"},
+      "correct_answer": "つくえの 上に パソコンが あります"
+    },
+    {
+      "stage": 5,
+      "type": "rearrange",
+      "content": {"words": ["郵便局は", "銀行の", "隣に", "あります"], "instruction": "So'zlarni to'g'ri tartibga tering"},
+      "correct_answer": "郵便局は 銀行の 隣に あります"
+    },
+    {
+      "stage": 6,
+      "type": "openEnded",
+      "content": {"prompt": "O'zingiz yashaydigan xonani tasvirlab yozing: qayerda nima bor (つくえの上に, いすの下に va h.k.)."},
+      "correct_answer": null
+    },
+    {
+      "stage": 7,
+      "type": "openEnded",
+      "content": {"prompt": "Do'kon yoki bino qayerda joylashganini so'rash-javob berish dialogini yozing (の隣に, の中に kabi iboralarni ishlatib)."},
+      "correct_answer": null
+    }
+  ],
+  "quiz_questions": [
+    {"question": "Jonli mavjudot (odam, hayvon) uchun qaysi fe'l ishlatiladi?", "options": ["あります", "います", "です", "いきます"], "correct_option_index": 1},
+    {"question": "«Stol ustida» yaponchada:", "options": ["つくえの下", "つくえの上", "つくえの中", "つくえの隣"], "correct_option_index": 1},
+    {"question": "Mavjudlikni bildiruvchi gapda obyekt qaysi zarracha bilan keladi?", "options": ["は", "を", "が", "の"], "correct_option_index": 2},
+    {"question": "「した」ning ma'nosi:", "options": ["Usti", "Osti", "Ichi", "Yoni"], "correct_option_index": 1},
+    {"question": "«Pochta banki yonida» - to'g'ri gap:", "options": ["郵便局は 銀行の中に あります。", "郵便局は 銀行の隣に あります。", "郵便局は 銀行の上に います。", "郵便局が 銀行の隣です。"], "correct_option_index": 1},
+    {"question": "「なか」ning tarjimasi:", "options": ["Usti", "Osti", "Ichi", "Old"], "correct_option_index": 2},
+    {"question": "«Sinfda talaba bor» - to'g'ri gap:", "options": ["きょうしつに 学生が あります。", "きょうしつに 学生が います。", "きょうしつは 学生が います。", "きょうしつを 学生が います。"], "correct_option_index": 1},
+    {"question": "「こうえん」so'zining ma'nosi:", "options": ["Bog'cha", "Park", "Maktab", "Kutubxona"], "correct_option_index": 1},
+    {"question": "「となり」ning ma'nosi:", "options": ["Ichida", "Ostida", "Yonida", "Ustida"], "correct_option_index": 2},
+    {"question": "Agar narsa allaqachon ma'lum bo'lsa, u qanday zarracha bilan mavzuga aylanadi?", "options": ["が", "を", "は", "に"], "correct_option_index": 2}
+  ]
+}

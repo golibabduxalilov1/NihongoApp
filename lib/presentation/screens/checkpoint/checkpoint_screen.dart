@@ -76,7 +76,7 @@ class _CheckpointScreenState extends ConsumerState<CheckpointScreen> {
           Container(
             padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
-              color: AppColors.secondary.withOpacity(0.1),
+              color: AppColors.secondary.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(6),
             ),
             child: Text(
@@ -97,16 +97,18 @@ class _CheckpointScreenState extends ConsumerState<CheckpointScreen> {
               style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600)),
           const SizedBox(height: 20),
           Expanded(
-            child: ListView.builder(
-              itemCount: q.options.length,
-              itemBuilder: (context, i) {
-                return RadioListTile<int>(
-                  value: i,
-                  groupValue: selected,
-                  title: Text(q.options[i]),
-                  onChanged: (value) => setState(() => _answers[q.id] = value!),
-                );
-              },
+            child: RadioGroup<int>(
+              groupValue: selected,
+              onChanged: (value) => setState(() => _answers[q.id] = value!),
+              child: ListView.builder(
+                itemCount: q.options.length,
+                itemBuilder: (context, i) {
+                  return RadioListTile<int>(
+                    value: i,
+                    title: Text(q.options[i]),
+                  );
+                },
+              ),
             ),
           ),
           ElevatedButton(

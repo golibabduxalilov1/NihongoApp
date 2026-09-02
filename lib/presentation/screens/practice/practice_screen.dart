@@ -158,28 +158,31 @@ class _MultipleChoiceWidgetState extends State<_MultipleChoiceWidget> {
       children: [
         Text(question, style: const TextStyle(fontSize: 18)),
         const SizedBox(height: 20),
-        ...options.map((opt) {
-          final isCorrect = opt == widget.item.correctAnswer;
-          Color? bgColor;
-          if (_submitted && _selected == opt) {
-            bgColor = isCorrect ? Colors.green.shade100 : Colors.red.shade100;
-          } else if (_submitted && isCorrect) {
-            bgColor = Colors.green.shade100;
-          }
+        RadioGroup<String>(
+          groupValue: _selected,
+          onChanged: (value) => setState(() => _selected = value),
+          child: Column(
+            children: options.map((opt) {
+              final isCorrect = opt == widget.item.correctAnswer;
+              Color? bgColor;
+              if (_submitted && _selected == opt) {
+                bgColor = isCorrect ? Colors.green.shade100 : Colors.red.shade100;
+              } else if (_submitted && isCorrect) {
+                bgColor = Colors.green.shade100;
+              }
 
-          return Padding(
-            padding: const EdgeInsets.only(bottom: 8),
-            child: RadioListTile<String>(
-              value: opt,
-              groupValue: _selected,
-              title: Text(opt),
-              tileColor: bgColor,
-              onChanged: _submitted
-                  ? null
-                  : (value) => setState(() => _selected = value),
-            ),
-          );
-        }),
+              return Padding(
+                padding: const EdgeInsets.only(bottom: 8),
+                child: RadioListTile<String>(
+                  value: opt,
+                  title: Text(opt),
+                  tileColor: bgColor,
+                  enabled: !_submitted,
+                ),
+              );
+            }).toList(),
+          ),
+        ),
         // Mikro-feedback: xato bo'lsa, nega xato ekanini tushuntiramiz
         // (TZ funksiya 2, mistake_explanation maydoni orqali).
         if (isWrong && _selected != null)
@@ -360,7 +363,7 @@ class _RearrangeWidgetState extends State<_RearrangeWidget> {
           children: _availableWords
               .map((w) => ActionChip(
                     label: Text(w),
-                    backgroundColor: AppColors.primary.withOpacity(0.1),
+                    backgroundColor: AppColors.primary.withValues(alpha: 0.1),
                     onPressed: _isCorrect == null
                         ? () => setState(() {
                               _availableWords.remove(w);
@@ -425,7 +428,7 @@ class _OpenEndedWidgetState extends State<_OpenEndedWidget> {
         Container(
           padding: const EdgeInsets.all(12),
           decoration: BoxDecoration(
-            color: AppColors.primary.withOpacity(0.08),
+            color: AppColors.primary.withValues(alpha: 0.08),
             borderRadius: BorderRadius.circular(8),
           ),
           child: Text(prompt, style: const TextStyle(fontSize: 16)),

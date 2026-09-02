@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import '../../../domain/entities/vocabulary.dart';
-import '../../providers/lesson_providers.dart';
 import '../../providers/repository_providers.dart';
 import '../../providers/user_stats_providers.dart';
 import '../../../core/constants/app_colors.dart';

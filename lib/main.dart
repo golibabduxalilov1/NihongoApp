@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'data/datasources/seed_data_loader.dart';
 import 'presentation/screens/onboarding/onboarding_screen.dart';
-import 'presentation/screens/shell/main_shell.dart';
 import 'core/constants/app_colors.dart';
 
 Future<void> main() async {

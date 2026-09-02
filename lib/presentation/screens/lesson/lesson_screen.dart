@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../domain/entities/lesson.dart';
 import '../../providers/lesson_providers.dart';
-import '../../providers/repository_providers.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../core/constants/app_typography.dart';
 import '../flashcard/flashcard_screen.dart';
@@ -72,7 +71,7 @@ class _StagePath extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final items = LessonStage.values;
+    const items = LessonStage.values;
 
     return ListView.builder(
       padding: const EdgeInsets.fromLTRB(20, 10, 20, 30),
@@ -243,7 +242,7 @@ class _StageNode extends StatelessWidget {
       fg = AppColors.primary;
       border = Border.all(color: AppColors.primary, width: 3);
       shadow = [
-        BoxShadow(color: AppColors.primaryLight, blurRadius: 0, spreadRadius: 5),
+        const BoxShadow(color: AppColors.primaryLight, blurRadius: 0, spreadRadius: 5),
       ];
     } else {
       bg = const Color(0xFFEFEBE3);

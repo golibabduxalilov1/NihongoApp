@@ -29,7 +29,7 @@ dependencies:
   json_annotation: ^4.9.0
 
   # Fayl tanlash (kontent import uchun)
-  file_picker: ^8.0.0+1
+  file_picker: ^10.1.9
 
   # UI yordamchilari
   percent_indicator: ^4.2.3
@@ -47,3 +47,4 @@ flutter:
 
   assets:
     - assets/sample_data/
+    - assets/sample_data/lessons/

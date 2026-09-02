@@ -34,7 +34,6 @@ class PlacementTestUseCase {
     // difficulty_order bo'yicha saralanganligiga ishonch hosil qilamiz
     final sorted = [...questions]..sort((a, b) => a.difficultyOrder.compareTo(b.difficultyOrder));
 
-    int correctStreak = 0;
     int consecutiveWrong = 0;
     int lastCorrectLessonId = sorted.isNotEmpty ? sorted.first.mapsToLessonId : 1;
     int correctCount = 0;
@@ -45,12 +44,10 @@ class PlacementTestUseCase {
 
       if (isCorrect) {
         correctCount++;
-        correctStreak++;
         consecutiveWrong = 0;
         lastCorrectLessonId = q.mapsToLessonId;
       } else {
         consecutiveWrong++;
-        correctStreak = 0;
         // Ketma-ket 2 tadan ortiq xato — foydalanuvchi bu darajadan
         // qiynalayotganini bildiradi, testni shu yerda "to'xtatamiz"
         // (keyingi savollar hisoblanmaydi, lekin baribir javob berilgan

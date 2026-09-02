@@ -142,7 +142,7 @@ class _FlashcardScreenState extends ConsumerState<FlashcardScreen> {
                   borderRadius: BorderRadius.circular(28),
                   border: Border.all(color: AppColors.border),
                   boxShadow: [
-                    BoxShadow(color: AppColors.ink.withOpacity(0.08), blurRadius: 24, offset: const Offset(0, 8)),
+                    BoxShadow(color: AppColors.ink.withValues(alpha: 0.08), blurRadius: 24, offset: const Offset(0, 8)),
                   ],
                 ),
                 padding: const EdgeInsets.all(28),
@@ -260,7 +260,7 @@ class _FlashcardScreenState extends ConsumerState<FlashcardScreen> {
     return ElevatedButton(
       onPressed: onTap,
       style: ElevatedButton.styleFrom(
-        backgroundColor: filled ? AppColors.primaryLight : bg.withOpacity(0.12),
+        backgroundColor: filled ? AppColors.primaryLight : bg.withValues(alpha: 0.12),
         padding: const EdgeInsets.symmetric(vertical: 15),
         elevation: 0,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),

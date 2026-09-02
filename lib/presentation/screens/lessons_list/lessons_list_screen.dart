@@ -25,14 +25,22 @@ class LessonsListScreen extends ConsumerWidget {
             padding: const EdgeInsets.fromLTRB(24, 20, 24, 8),
             child: Align(
               alignment: Alignment.centerLeft,
-              child: Text('Darslar', style: AppTypography.screenTitle.copyWith(fontSize: 22)),
+              child: Text('Darslar',
+                  style: AppTypography.screenTitle.copyWith(fontSize: 22)),
             ),
           ),
           Expanded(
-            child: lessonsAsync.when(
-              loading: () => const Center(child: CircularProgressIndicator()),
-              error: (err, _) => Center(child: Text('Xatolik: $err')),
-              data: (lessons) => _LessonListBody(lessons: lessons),
+            child: RefreshIndicator(
+              onRefresh: () async {
+                ref.invalidate(lessonsListProvider);
+                ref.invalidate(lessonUnlockedProvider);
+                await ref.read(lessonsListProvider.future);
+              },
+              child: lessonsAsync.when(
+                loading: () => const Center(child: CircularProgressIndicator()),
+                error: (err, _) => Center(child: Text('Xatolik: $err')),
+                data: (lessons) => _LessonListBody(lessons: lessons),
+              ),
             ),
           ),
         ],
@@ -48,15 +56,18 @@ class _LessonListBody extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     if (lessons.isEmpty) {
-      return Center(
-        child: Padding(
-          padding: const EdgeInsets.all(24),
-          child: Text(
-            "Hali darslar yo'q. Profil > Sozlamalar orqali kontent import qiling.",
-            textAlign: TextAlign.center,
-            style: AppTypography.body,
+      return ListView(
+        physics: const AlwaysScrollableScrollPhysics(),
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(24),
+            child: Text(
+              "Hali darslar yo'q. Profil > Sozlamalar orqali kontent import qiling.",
+              textAlign: TextAlign.center,
+              style: AppTypography.body,
+            ),
           ),
-        ),
+        ],
       );
     }
 
@@ -75,7 +86,8 @@ class _LessonListBody extends ConsumerWidget {
                   children: [
                     Text(
                       'Umumiy progress: $completedCount / ${lessons.length} dars',
-                      style: AppTypography.bodySmall.copyWith(fontWeight: FontWeight.w800, color: AppColors.ink),
+                      style: AppTypography.bodySmall.copyWith(
+                          fontWeight: FontWeight.w800, color: AppColors.ink),
                     ),
                     const SizedBox(height: 8),
                     LinearPercentIndicator(
@@ -94,6 +106,7 @@ class _LessonListBody extends ConsumerWidget {
         ),
         Expanded(
           child: ListView.builder(
+            physics: const AlwaysScrollableScrollPhysics(),
             padding: const EdgeInsets.fromLTRB(24, 0, 24, 24),
             itemCount: lessons.length,
             itemBuilder: (context, index) => _LessonRow(lesson: lessons[index]),
@@ -126,19 +139,28 @@ class _LessonRow extends ConsumerWidget {
               border: Border.all(color: AppColors.border),
             ),
             child: ListTile(
-              contentPadding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
+              contentPadding:
+                  const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
               enabled: isUnlocked,
               leading: _buildStatusIcon(isUnlocked),
               title: Text(lesson.title, style: AppTypography.lessonTitle),
               subtitle: Text(
-                isUnlocked ? 'Bosqich: ${lesson.currentStage}/7' : "Oldingi checkpoint imtihonidan o'ting",
+                isUnlocked
+                    ? 'Bosqich: ${lesson.currentStage}/7'
+                    : "Oldingi checkpoint imtihonidan o'ting",
                 style: AppTypography.lessonSubtitle,
               ),
               trailing: lesson.quizScore != null
-                  ? Text('${lesson.quizScore}%', style: AppTypography.buttonSecondary.copyWith(color: AppColors.green))
-                  : Icon(isUnlocked ? Icons.chevron_right : Icons.lock_outline, color: AppColors.inkFaint),
+                  ? Text('${lesson.quizScore}%',
+                      style: AppTypography.buttonSecondary
+                          .copyWith(color: AppColors.green))
+                  : Icon(isUnlocked ? Icons.chevron_right : Icons.lock_outline,
+                      color: AppColors.inkFaint),
               onTap: isUnlocked
-                  ? () => Navigator.push(context, MaterialPageRoute(builder: (_) => LessonScreen(lessonId: lesson.id)))
+                  ? () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (_) => LessonScreen(lessonId: lesson.id)))
                   : null,
             ),
           ),
@@ -166,7 +188,8 @@ class _LessonRow extends ConsumerWidget {
     return Container(
       width: 44,
       height: 44,
-      decoration: BoxDecoration(color: bg, borderRadius: BorderRadius.circular(14)),
+      decoration:
+          BoxDecoration(color: bg, borderRadius: BorderRadius.circular(14)),
       child: Icon(icon, color: AppColors.ink, size: 20),
     );
   }

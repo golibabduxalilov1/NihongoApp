@@ -1,0 +1,124 @@
+{
+  "lesson": {
+    "id": 5,
+    "title": "5-dars: Qayerga borasiz?",
+    "order_index": 5,
+    "book": 1
+  },
+  "vocabulary": [
+    {"kanji": "行きます", "kana": "いきます", "romaji": "ikimasu", "translation_uz": "bormoq", "translation_ru": "идти, ехать", "example_sentence": "わたしは タシケントへ いきます。", "example_sentence_romaji": "Watashi wa Tashikento e ikimasu."},
+    {"kanji": "来ます", "kana": "きます", "romaji": "kimasu", "translation_uz": "kelmoq", "translation_ru": "приходить", "example_sentence": "アジズさんは がっこうへ きます。", "example_sentence_romaji": "Azizu-san wa gakkou e kimasu."},
+    {"kanji": "帰ります", "kana": "かえります", "romaji": "kaerimasu", "translation_uz": "qaytmoq (uyga)", "translation_ru": "возвращаться домой", "example_sentence": "6時に うちへ かえります。", "example_sentence_romaji": "Rokuji ni uchi e kaerimasu."},
+    {"kanji": "学校", "kana": "がっこう", "romaji": "gakkou", "translation_uz": "maktab", "translation_ru": "школа", "example_sentence": "まいにち がっこうへ いきます。", "example_sentence_romaji": "Mainichi gakkou e ikimasu."},
+    {"kanji": "駅", "kana": "えき", "romaji": "eki", "translation_uz": "vokzal, bekat", "translation_ru": "станция", "example_sentence": "えきから あるいて きました。", "example_sentence_romaji": "Eki kara aruite kimashita."},
+    {"kanji": "電車", "kana": "でんしゃ", "romaji": "densha", "translation_uz": "poyezd", "translation_ru": "поезд", "example_sentence": "でんしゃで がっこうへ いきます。", "example_sentence_romaji": "Densha de gakkou e ikimasu."},
+    {"kanji": null, "kana": "バス", "romaji": "basu", "translation_uz": "avtobus", "translation_ru": "автобус", "example_sentence": "バスで うちへ かえります。", "example_sentence_romaji": "Basu de uchi e kaerimasu."},
+    {"kanji": null, "kana": "タクシー", "romaji": "takushii", "translation_uz": "taksi", "translation_ru": "такси", "example_sentence": "タクシーで きました。", "example_sentence_romaji": "Takushii de kimashita."},
+    {"kanji": "歩いて", "kana": "あるいて", "romaji": "aruite", "translation_uz": "piyoda", "translation_ru": "пешком", "example_sentence": "あるいて がっこうへ いきます。", "example_sentence_romaji": "Aruite gakkou e ikimasu."},
+    {"kanji": "友達", "kana": "ともだち", "romaji": "tomodachi", "translation_uz": "do'st", "translation_ru": "друг", "example_sentence": "ともだちと えいがかんへ いきます。", "example_sentence_romaji": "Tomodachi to eigakan e ikimasu."},
+    {"kanji": null, "kana": "いつ", "romaji": "itsu", "translation_uz": "qachon", "translation_ru": "когда", "example_sentence": "いつ タシケントへ いきますか。", "example_sentence_romaji": "Itsu Tashikento e ikimasu ka."},
+    {"kanji": "来週", "kana": "らいしゅう", "romaji": "raishuu", "translation_uz": "keyingi hafta", "translation_ru": "следующая неделя", "example_sentence": "らいしゅう にほんへ いきます。", "example_sentence_romaji": "Raishuu Nihon e ikimasu."}
+  ],
+  "grammar": [
+    {
+      "title": "СУЩ (joy) へ 行きます／来ます／帰ります",
+      "explanation": "Harakat yo'nalishini bildirish uchun joy nomiga 「へ」zarrachasi qo'shiladi (talaffuzda 'e' deb o'qiladi) va harakat fe'li qo'yiladi.",
+      "examples": [
+        {"jp": "タシケントへ いきます。", "translation": "Toshkentga boraman."},
+        {"jp": "うちへ かえります。", "translation": "Uyga qaytaman."}
+      ]
+    },
+    {
+      "title": "СУЩ (transport) で 行きます／来ます／帰ります",
+      "explanation": "Qaysi transport vositasida borilishini bildirish uchun transport nomiga 「で」zarrachasi qo'shiladi. Piyoda borish uchun esa 「あるいて」so'zi ishlatiladi, 「で」qo'yilmaydi.",
+      "examples": [
+        {"jp": "でんしゃで がっこうへ いきます。", "translation": "Poyezdda maktabga boraman."},
+        {"jp": "あるいて かえりました。", "translation": "Piyoda qaytdim."}
+      ]
+    },
+    {
+      "title": "СУЩ (odam) と ГЛАГ (birga harakat)",
+      "explanation": "Kim bilan birga harakat qilinayotganini bildirish uchun kishi nomiga 「と」zarrachasi qo'shiladi. Yolg'iz bo'lsa 「ひとりで」ishlatiladi, 「と」qo'yilmaydi.",
+      "examples": [
+        {"jp": "ともだちと えいがかんへ いきます。", "translation": "Do'stim bilan kinoteatrga boraman."},
+        {"jp": "ひとりで がっこうへ いきます。", "translation": "Yolg'iz maktabga boraman."}
+      ]
+    },
+    {
+      "title": "いつ (qachon)",
+      "explanation": "「いつ」so'roq so'ziga 「に」zarrachasi qo'shilmaydi, boshqa vaqt so'roqlaridan farqli o'laroq.",
+      "examples": [
+        {"jp": "いつ にほんへ いきますか。", "translation": "Qachon Yaponiyaga borasiz?"},
+        {"jp": "……らいしゅう いきます。", "translation": "...Keyingi hafta boraman."}
+      ]
+    }
+  ],
+  "practice_items": [
+    {
+      "stage": 4,
+      "type": "fillBlank",
+      "content": {"sentence": "がっこう＿ いきます。", "hint": "yo'nalish zarrachasi"},
+      "correct_answer": "へ"
+    },
+    {
+      "stage": 4,
+      "type": "multipleChoice",
+      "content": {"question": "「でんしゃ＿ いきます。」to'g'ri zarrachani tanlang:", "options": ["で", "へ", "と", "に"]},
+      "correct_answer": "で",
+      "topic_tag": "particle_de",
+      "mistake_explanation": {
+        "へ": "「へ」yo'nalishni bildiradi (qayerga), lekin bu yerda transport vositasi ko'rsatilyapti, shuning uchun 「で」kerak.",
+        "と": "「と」birga harakat qilinayotgan kishini bildiradi, transport uchun emas.",
+        "に": "「に」vaqt yoki manzilni bildiradi, transport vositasi uchun 「で」ishlatiladi."
+      }
+    },
+    {
+      "stage": 4,
+      "type": "multipleChoice",
+      "content": {"question": "«Do'stim bilan boraman» - to'g'ri variant:", "options": ["ともだちが いきます。", "ともだちと いきます。", "ともだちを いきます。", "ともだちへ いきます。"]},
+      "correct_answer": "ともだちと いきます。"
+    },
+    {
+      "stage": 4,
+      "type": "multipleChoice",
+      "content": {"question": "«Piyoda qaytdim» - to'g'ri variant:", "options": ["あるいてで かえりました。", "あるいて かえりました。", "あるきます かえりました。", "あるいてを かえりました。"]},
+      "correct_answer": "あるいて かえりました。"
+    },
+    {
+      "stage": 5,
+      "type": "rearrange",
+      "content": {"words": ["わたしは", "でんしゃで", "がっこうへ", "いきます"], "instruction": "So'zlarni to'g'ri tartibga tering"},
+      "correct_answer": "わたしは でんしゃで がっこうへ いきます"
+    },
+    {
+      "stage": 5,
+      "type": "rearrange",
+      "content": {"words": ["らいしゅう", "ともだちと", "にほんへ", "いきます"], "instruction": "So'zlarni to'g'ri tartibga tering"},
+      "correct_answer": "らいしゅう ともだちと にほんへ いきます"
+    },
+    {
+      "stage": 6,
+      "type": "openEnded",
+      "content": {"prompt": "Har kuni maktab yoki ishga qanday borishingizni (qaysi transportda, kim bilan) yozing."},
+      "correct_answer": null
+    },
+    {
+      "stage": 7,
+      "type": "openEnded",
+      "content": {"prompt": "Sayohat rejasi haqida dialog yozing: qachon, qayerga, kim bilan va nima bilan borishlari haqida so'rashsin."},
+      "correct_answer": null
+    }
+  ],
+  "quiz_questions": [
+    {"question": "「いきます」ning ma'nosi:", "options": ["Kelmoq", "Bormoq", "Qaytmoq", "Turmoq"], "correct_option_index": 1},
+    {"question": "Yo'nalishni bildiruvchi zarracha qaysi?", "options": ["で", "と", "へ", "が"], "correct_option_index": 2},
+    {"question": "Transport vositasini bildiruvchi zarracha qaysi?", "options": ["へ", "で", "と", "の"], "correct_option_index": 1},
+    {"question": "«Piyoda» yaponchada qanday bo'ladi?", "options": ["でんしゃで", "あるいて", "バスで", "タクシーで"], "correct_option_index": 1},
+    {"question": "Yolg'iz harakat qilishni bildirish uchun qaysi ibora ishlatiladi?", "options": ["ともだちと", "ひとりで", "みんなと", "かぞくと"], "correct_option_index": 1},
+    {"question": "「いつ」so'zi bilan qaysi zarracha ISHLATILMAYDI?", "options": ["に", "も", "か", "Hech biri kerak emas"], "correct_option_index": 0},
+    {"question": "「らいしゅう」ning tarjimasi:", "options": ["O'tgan hafta", "Bu hafta", "Keyingi hafta", "Har hafta"], "correct_option_index": 2},
+    {"question": "「かえります」ning ma'nosi:", "options": ["Bormoq", "Kelmoq", "Uyga qaytmoq", "Kutmoq"], "correct_option_index": 2},
+    {"question": "To'g'ri gapni tanlang:", "options": ["がっこうを いきます。", "がっこうへ いきます。", "がっこうと いきます。", "がっこうが いきます。"], "correct_option_index": 1},
+    {"question": "「えき」so'zining ma'nosi:", "options": ["Maktab", "Vokzal, bekat", "Kompaniya", "Do'kon"], "correct_option_index": 1}
+  ]
+}

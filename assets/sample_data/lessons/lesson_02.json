@@ -1,0 +1,123 @@
+{
+  "lesson": {
+    "id": 2,
+    "title": "2-dars: Bu nima?",
+    "order_index": 2,
+    "book": 1
+  },
+  "vocabulary": [
+    {"kanji": null, "kana": "これ", "romaji": "kore", "translation_uz": "bu (gapiruvchiga yaqin)", "translation_ru": "это (близко к говорящему)", "example_sentence": "これは ほんです。", "example_sentence_romaji": "Kore wa hon desu."},
+    {"kanji": null, "kana": "それ", "romaji": "sore", "translation_uz": "u (tinglovchiga yaqin)", "translation_ru": "то (близко к слушающему)", "example_sentence": "それは わたしの かさです。", "example_sentence_romaji": "Sore wa watashi no kasa desu."},
+    {"kanji": null, "kana": "あれ", "romaji": "are", "translation_uz": "u (ikkalasidan uzoq)", "translation_ru": "то (вдали от обоих)", "example_sentence": "あれは がっこうです。", "example_sentence_romaji": "Are wa gakkou desu."},
+    {"kanji": "本", "kana": "ほん", "romaji": "hon", "translation_uz": "kitob", "translation_ru": "книга", "example_sentence": "これは にほんごの ほんです。", "example_sentence_romaji": "Kore wa nihongo no hon desu."},
+    {"kanji": "辞書", "kana": "じしょ", "romaji": "jisho", "translation_uz": "lug'at", "translation_ru": "словарь", "example_sentence": "それは じしょですか。", "example_sentence_romaji": "Sore wa jisho desu ka."},
+    {"kanji": null, "kana": "かさ", "romaji": "kasa", "translation_uz": "soyabon", "translation_ru": "зонт", "example_sentence": "それは たなかさんの かさです。", "example_sentence_romaji": "Sore wa Tanaka-san no kasa desu."},
+    {"kanji": null, "kana": "とけい", "romaji": "tokei", "translation_uz": "soat", "translation_ru": "часы", "example_sentence": "これは わたしの とけいです。", "example_sentence_romaji": "Kore wa watashi no tokei desu."},
+    {"kanji": "机", "kana": "つくえ", "romaji": "tsukue", "translation_uz": "stol", "translation_ru": "стол", "example_sentence": "あれは つくえです。", "example_sentence_romaji": "Are wa tsukue desu."},
+    {"kanji": null, "kana": "なん", "romaji": "nan", "translation_uz": "nima", "translation_ru": "что", "example_sentence": "これは なんですか。", "example_sentence_romaji": "Kore wa nan desu ka."},
+    {"kanji": null, "kana": "そう", "romaji": "sou", "translation_uz": "shunday", "translation_ru": "так", "example_sentence": "はい、そうです。", "example_sentence_romaji": "Hai, sou desu."}
+  ],
+  "grammar": [
+    {
+      "title": "これ／それ／あれ (ko'rsatish olmoshlari)",
+      "explanation": "これ — gapiruvchiga yaqin narsa, それ — tinglovchiga yaqin narsa, あれ — ikkalasidan ham uzoqdagi narsa. Bu olmoshlar mustaqil ishlatiladi (ot bilan birga kelmaydi).",
+      "examples": [
+        {"jp": "これは ほんです。", "translation": "Bu kitob."},
+        {"jp": "それは かさですか。", "translation": "U soyabonmi?"},
+        {"jp": "あれは つくえです。", "translation": "Ana u - stol."}
+      ]
+    },
+    {
+      "title": "この／その／あの + СУЩ (aniqlovchi olmoshlar)",
+      "explanation": "これ/それ/あれ dan farqli o'laroq, この/その/あの har doim ot bilan birga keladi va o'sha otni aniqlaydi.",
+      "examples": [
+        {"jp": "この 本は わたしのです。", "translation": "Bu kitob mening kitobim."},
+        {"jp": "その とけいは たかいですか。", "translation": "O'sha soat qimmatmi?"}
+      ]
+    },
+    {
+      "title": "СУЩ は なんですか (Bu nima?)",
+      "explanation": "「なん」so'roq olmoshi 'nima' ma'nosini bildiradi. Savol gapida 「か」zarrachasi jumla oxiriga qo'shiladi.",
+      "examples": [
+        {"jp": "これは なんですか。", "translation": "Bu nima?"},
+        {"jp": "……じしょです。", "translation": "...Lug'at."}
+      ]
+    },
+    {
+      "title": "はい、そうです／いいえ、ちがいます",
+      "explanation": "Ha/yo'q savoliga javob berishda 「そうです」(shunday) yoki inkorda 「ちがいます」(unday emas) ishlatiladi.",
+      "examples": [
+        {"jp": "それは じしょですか。……はい、そうです。", "translation": "U lug'atmi? — Ha, shunday."},
+        {"jp": "これは とけいですか。……いいえ、ちがいます。", "translation": "Bu soatmi? — Yo'q, unday emas."}
+      ]
+    }
+  ],
+  "practice_items": [
+    {
+      "stage": 4,
+      "type": "fillBlank",
+      "content": {"sentence": "＿＿は ほんです。（gapiruvchiga yaqin narsa)", "hint": "3 harfli ko'rsatish olmoshi"},
+      "correct_answer": "これ"
+    },
+    {
+      "stage": 4,
+      "type": "multipleChoice",
+      "content": {"question": "「これは＿ですか。」nima so'ralmoqda?", "options": ["kim", "nima", "qayer", "qachon"]},
+      "correct_answer": "nima"
+    },
+    {
+      "stage": 4,
+      "type": "multipleChoice",
+      "content": {"question": "「これ＿ ほんです。」to'g'ri zarrachani tanlang:", "options": ["は", "が", "を", "で"]},
+      "correct_answer": "は",
+      "topic_tag": "particle_wa",
+      "mistake_explanation": {
+        "が": "「が」ta'kidlash yoki savol so'zi bilan birga ishlatiladi. Bu oddiy tasvirlash gapida「は」kerak.",
+        "を": "「を」faqat fe'lning to'g'ridan-to'g'ri to'ldiruvchisi bilan ishlatiladi. Bu yerda fe'l yo'q.",
+        "で": "「で」vosita yoki joy uchun ishlatiladi. Bu gapga mos kelmaydi."
+      }
+    },
+    {
+      "stage": 4,
+      "type": "fillBlank",
+      "content": {"sentence": "＿の 本は わたしのです。（tinglovchiga yaqin narsa)", "hint": "aniqlovchi olmosh"},
+      "correct_answer": "その"
+    },
+    {
+      "stage": 5,
+      "type": "rearrange",
+      "content": {"words": ["それは", "たなかさんの", "かさです"], "instruction": "So'zlarni to'g'ri tartibga tering"},
+      "correct_answer": "それは たなかさんの かさです"
+    },
+    {
+      "stage": 5,
+      "type": "rearrange",
+      "content": {"words": ["この", "とけいは", "わたしのです"], "instruction": "So'zlarni to'g'ri tartibga tering"},
+      "correct_answer": "この とけいは わたしのです"
+    },
+    {
+      "stage": 6,
+      "type": "openEnded",
+      "content": {"prompt": "Stolingizda turgan 3 ta narsani これ/それ bilan tasvirlab yozing."},
+      "correct_answer": null
+    },
+    {
+      "stage": 7,
+      "type": "openEnded",
+      "content": {"prompt": "Do'stingiz bilan biror narsa haqida savol-javob dialogini yozing (なん va これ/それ ishlatib)."},
+      "correct_answer": null
+    }
+  ],
+  "quiz_questions": [
+    {"question": "Gapiruvchiga yaqin narsa uchun qaysi olmosh ishlatiladi?", "options": ["あれ", "それ", "これ", "どれ"], "correct_option_index": 2},
+    {"question": "「本」so'zining tarjimasi:", "options": ["Soyabon", "Kitob", "Stol", "Soat"], "correct_option_index": 1},
+    {"question": "「なん」nima ma'noni bildiradi?", "options": ["Kim", "Qayer", "Nima", "Qachon"], "correct_option_index": 2},
+    {"question": "To'g'ri savol gapini tanlang:", "options": ["これは なんですか。", "これ なん ですか。", "なんは これですか。", "これなん ですか"], "correct_option_index": 0},
+    {"question": "Tinglovchiga yaqin narsa uchun:", "options": ["これ", "あれ", "それ", "どこ"], "correct_option_index": 2},
+    {"question": "「かさ」ning ma'nosi:", "options": ["Kitob", "Soyabon", "Sumka", "Soat"], "correct_option_index": 1},
+    {"question": "「じしょ」nima?", "options": ["Kitob", "Daftar", "Lug'at", "Qalam"], "correct_option_index": 2},
+    {"question": "Ko'rsatish olmoshlari ot bilan qanday ishlatiladi?", "options": ["Ot bilan birga kelmaydi, mustaqil ishlatiladi", "Ot bilan qo'shilib yoziladi", "Otdan keyin kelishi shart", "Faqat savol gapida ishlatiladi"], "correct_option_index": 0},
+    {"question": "「はい、そうです」qanday holatda ishlatiladi?", "options": ["Savolni inkor qilishda", "Savolni tasdiqlashda", "Salomlashishda", "Xayrlashishda"], "correct_option_index": 1},
+    {"question": "「あの 本」tuzilmasida 「あの」nimani bildiradi?", "options": ["Gapiruvchiga yaqin", "Tinglovchiga yaqin", "Ikkalasidan uzoq", "Noaniq"], "correct_option_index": 2}
+  ]
+}

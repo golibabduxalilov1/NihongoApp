@@ -21,101 +21,121 @@ class StatsScreen extends ConsumerWidget {
 
     return SafeArea(
       bottom: false,
-      child: ListView(
-        padding: const EdgeInsets.fromLTRB(24, 20, 24, 24),
-        children: [
-          Text('Statistika', style: AppTypography.screenTitle.copyWith(fontSize: 22)),
-          const SizedBox(height: 20),
-          lessonsAsync.when(
-            loading: () => const Center(child: CircularProgressIndicator()),
-            error: (err, _) => Text('Xatolik: $err'),
-            data: (lessons) {
-              final completed = lessons.where((l) => l.isCompleted).toList();
-              final withScores = completed.where((l) => l.quizScore != null).toList();
-              final avgScore = withScores.isEmpty
-                  ? 0
-                  : withScores.map((l) => l.quizScore!).reduce((a, b) => a + b) ~/ withScores.length;
+      child: RefreshIndicator(
+        onRefresh: () async {
+          ref.invalidate(lessonsListProvider);
+          ref.invalidate(userStatsProvider);
+          ref.invalidate(weakPointsProvider);
+          await Future.wait([
+            ref.read(lessonsListProvider.future),
+            ref.read(userStatsProvider.future),
+            ref.read(weakPointsProvider.future),
+          ]);
+        },
+        child: ListView(
+          physics: const AlwaysScrollableScrollPhysics(),
+          padding: const EdgeInsets.fromLTRB(24, 20, 24, 24),
+          children: [
+            Text('Statistika',
+                style: AppTypography.screenTitle.copyWith(fontSize: 22)),
+            const SizedBox(height: 20),
+            lessonsAsync.when(
+              loading: () => const Center(child: CircularProgressIndicator()),
+              error: (err, _) => Text('Xatolik: $err'),
+              data: (lessons) {
+                final completed = lessons.where((l) => l.isCompleted).toList();
+                final withScores =
+                    completed.where((l) => l.quizScore != null).toList();
+                final avgScore = withScores.isEmpty
+                    ? 0
+                    : withScores
+                            .map((l) => l.quizScore!)
+                            .reduce((a, b) => a + b) ~/
+                        withScores.length;
 
-              return Row(
+                return Row(
+                  children: [
+                    Expanded(
+                      child: _StatCard(
+                        label: 'Yakunlangan darslar',
+                        value: '${completed.length}/${lessons.length}',
+                        icon: Icons.check_circle_rounded,
+                        bg: AppColors.mint,
+                        fg: AppColors.green,
+                      ),
+                    ),
+                    const SizedBox(width: 12),
+                    Expanded(
+                      child: _StatCard(
+                        label: "O'rtacha ball",
+                        value: '$avgScore%',
+                        icon: Icons.bar_chart_rounded,
+                        bg: AppColors.lavender,
+                        fg: AppColors.secondary,
+                      ),
+                    ),
+                  ],
+                );
+              },
+            ),
+            const SizedBox(height: 12),
+            statsAsync.when(
+              loading: () => const SizedBox.shrink(),
+              error: (_, __) => const SizedBox.shrink(),
+              data: (stats) => Row(
                 children: [
                   Expanded(
                     child: _StatCard(
-                      label: 'Yakunlangan darslar',
-                      value: '${completed.length}/${lessons.length}',
-                      icon: Icons.check_circle_rounded,
-                      bg: AppColors.mint,
-                      fg: AppColors.green,
+                      label: 'Joriy streak',
+                      value: '${stats.currentStreak} kun',
+                      icon: Icons.local_fire_department_rounded,
+                      bg: AppColors.peach,
+                      fg: AppColors.primaryDark,
                     ),
                   ),
                   const SizedBox(width: 12),
                   Expanded(
                     child: _StatCard(
-                      label: "O'rtacha ball",
-                      value: '$avgScore%',
-                      icon: Icons.bar_chart_rounded,
-                      bg: AppColors.lavender,
-                      fg: AppColors.secondary,
+                      label: 'Eng uzun streak',
+                      value: '${stats.longestStreak} kun',
+                      icon: Icons.emoji_events_rounded,
+                      bg: const Color(0xFFFFF6E5),
+                      fg: AppColors.gold,
                     ),
                   ),
                 ],
-              );
-            },
-          ),
-          const SizedBox(height: 12),
-          statsAsync.when(
-            loading: () => const SizedBox.shrink(),
-            error: (_, __) => const SizedBox.shrink(),
-            data: (stats) => Row(
-              children: [
-                Expanded(
-                  child: _StatCard(
-                    label: 'Joriy streak',
-                    value: '${stats.currentStreak} kun',
-                    icon: Icons.local_fire_department_rounded,
-                    bg: AppColors.peach,
-                    fg: AppColors.primaryDark,
-                  ),
-                ),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: _StatCard(
-                    label: 'Eng uzun streak',
-                    value: '${stats.longestStreak} kun',
-                    icon: Icons.emoji_events_rounded,
-                    bg: const Color(0xFFFFF6E5),
-                    fg: AppColors.gold,
-                  ),
-                ),
-              ],
+              ),
             ),
-          ),
-          const SizedBox(height: 28),
-          Text('Zaif tomonlar', style: AppTypography.sectionTitle),
-          const SizedBox(height: 4),
-          Text(
-            "Eng ko'p xato qilgan grammatik mavzularingiz",
-            style: AppTypography.bodySmall,
-          ),
-          const SizedBox(height: 12),
-          weakPointsAsync.when(
-            loading: () => const Center(child: CircularProgressIndicator()),
-            error: (err, _) => Text('Xatolik: $err'),
-            data: (weakPoints) {
-              if (weakPoints.isEmpty) {
-                return Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 16),
-                  child: Text(
-                    "Hozircha zaif tomon aniqlanmadi. Ajoyib!",
-                    style: AppTypography.body,
-                  ),
+            const SizedBox(height: 28),
+            Text('Zaif tomonlar', style: AppTypography.sectionTitle),
+            const SizedBox(height: 4),
+            Text(
+              "Eng ko'p xato qilgan grammatik mavzularingiz",
+              style: AppTypography.bodySmall,
+            ),
+            const SizedBox(height: 12),
+            weakPointsAsync.when(
+              loading: () => const Center(child: CircularProgressIndicator()),
+              error: (err, _) => Text('Xatolik: $err'),
+              data: (weakPoints) {
+                if (weakPoints.isEmpty) {
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 16),
+                    child: Text(
+                      "Hozircha zaif tomon aniqlanmadi. Ajoyib!",
+                      style: AppTypography.body,
+                    ),
+                  );
+                }
+                return Column(
+                  children: weakPoints
+                      .map((wp) => _WeakPointTile(weakPoint: wp))
+                      .toList(),
                 );
-              }
-              return Column(
-                children: weakPoints.map((wp) => _WeakPointTile(weakPoint: wp)).toList(),
-              );
-            },
-          ),
-        ],
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -140,14 +160,16 @@ class _StatCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(color: bg, borderRadius: BorderRadius.circular(20)),
+      decoration:
+          BoxDecoration(color: bg, borderRadius: BorderRadius.circular(20)),
       child: Column(
         children: [
           Icon(icon, color: fg, size: 26),
           const SizedBox(height: 8),
           Text(value, style: AppTypography.sectionTitle.copyWith(color: fg)),
           const SizedBox(height: 2),
-          Text(label, style: AppTypography.caption, textAlign: TextAlign.center),
+          Text(label,
+              style: AppTypography.caption, textAlign: TextAlign.center),
         ],
       ),
     );
@@ -173,8 +195,11 @@ class _WeakPointTile extends StatelessWidget {
           Container(
             width: 44,
             height: 44,
-            decoration: BoxDecoration(color: AppColors.primaryLight, borderRadius: BorderRadius.circular(14)),
-            child: const Icon(Icons.warning_amber_rounded, color: AppColors.primaryDark, size: 20),
+            decoration: BoxDecoration(
+                color: AppColors.primaryLight,
+                borderRadius: BorderRadius.circular(14)),
+            child: const Icon(Icons.warning_amber_rounded,
+                color: AppColors.primaryDark, size: 20),
           ),
           const SizedBox(width: 14),
           Expanded(
@@ -183,7 +208,8 @@ class _WeakPointTile extends StatelessWidget {
               children: [
                 Text(weakPoint.displayName, style: AppTypography.lessonTitle),
                 const SizedBox(height: 2),
-                Text('${weakPoint.mistakeCount} marta xato', style: AppTypography.lessonSubtitle),
+                Text('${weakPoint.mistakeCount} marta xato',
+                    style: AppTypography.lessonSubtitle),
               ],
             ),
           ),
@@ -192,7 +218,9 @@ class _WeakPointTile extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (_) => TargetedPracticeScreen(topicTag: weakPoint.topicTag, topicName: weakPoint.displayName),
+                  builder: (_) => TargetedPracticeScreen(
+                      topicTag: weakPoint.topicTag,
+                      topicName: weakPoint.displayName),
                 ),
               );
             },

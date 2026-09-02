@@ -1,0 +1,125 @@
+{
+  "lesson": {
+    "id": 4,
+    "title": "4-dars: Soat necha?",
+    "order_index": 4,
+    "book": 1
+  },
+  "vocabulary": [
+    {"kanji": "起きます", "kana": "おきます", "romaji": "okimasu", "translation_uz": "uyg'onmoq, turmoq", "translation_ru": "вставать, просыпаться", "example_sentence": "わたしは 毎朝 6時に おきます。", "example_sentence_romaji": "Watashi wa maiasa rokuji ni okimasu."},
+    {"kanji": "寝ます", "kana": "ねます", "romaji": "nemasu", "translation_uz": "yotmoq, uxlamoq", "translation_ru": "ложиться спать", "example_sentence": "わたしは 11時に ねます。", "example_sentence_romaji": "Watashi wa juuichiji ni nemasu."},
+    {"kanji": "働きます", "kana": "はたらきます", "romaji": "hatarakimasu", "translation_uz": "ishlamoq", "translation_ru": "работать", "example_sentence": "アジズさんは 会社で はたらきます。", "example_sentence_romaji": "Azizu-san wa kaisha de hatarakimasu."},
+    {"kanji": "勉強します", "kana": "べんきょうします", "romaji": "benkyoushimasu", "translation_uz": "o'qimoq, dars tayyorlamoq", "translation_ru": "заниматься, учиться", "example_sentence": "毎日 にほんごを べんきょうします。", "example_sentence_romaji": "Mainichi nihongo o benkyoushimasu."},
+    {"kanji": "今", "kana": "いま", "romaji": "ima", "translation_uz": "hozir", "translation_ru": "сейчас", "example_sentence": "今 なんじですか。", "example_sentence_romaji": "Ima nanji desu ka."},
+    {"kanji": "-時", "kana": "-じ", "romaji": "-ji", "translation_uz": "... soat", "translation_ru": "... часов", "example_sentence": "今 7時です。", "example_sentence_romaji": "Ima shichiji desu."},
+    {"kanji": "-分", "kana": "-ふん", "romaji": "-fun/-pun", "translation_uz": "... daqiqa", "translation_ru": "... минут", "example_sentence": "7時10分です。", "example_sentence_romaji": "Shichiji juppun desu."},
+    {"kanji": "午前", "kana": "ごぜん", "romaji": "gozen", "translation_uz": "tushdan oldin", "translation_ru": "первая половина дня", "example_sentence": "ごぜん 9時から はたらきます。", "example_sentence_romaji": "Gozen kuji kara hatarakimasu."},
+    {"kanji": "午後", "kana": "ごご", "romaji": "gogo", "translation_uz": "tushdan keyin", "translation_ru": "вторая половина дня", "example_sentence": "ごご 6時に おわります。", "example_sentence_romaji": "Gogo rokuji ni owarimasu."},
+    {"kanji": null, "kana": "きのう", "romaji": "kinou", "translation_uz": "kecha", "translation_ru": "вчера", "example_sentence": "きのう べんきょうしました。", "example_sentence_romaji": "Kinou benkyoushimashita."},
+    {"kanji": null, "kana": "あした", "romaji": "ashita", "translation_uz": "ertaga", "translation_ru": "завтра", "example_sentence": "あした はたらきません。", "example_sentence_romaji": "Ashita hatarakimasen."},
+    {"kanji": "月曜日", "kana": "げつようび", "romaji": "getsuyoubi", "translation_uz": "dushanba", "translation_ru": "понедельник", "example_sentence": "げつようびから きんようびまで はたらきます。", "example_sentence_romaji": "Getsuyoubi kara kin'youbi made hatarakimasu."}
+  ],
+  "grammar": [
+    {
+      "title": "今 -時-分です (hozir soat nechchida)",
+      "explanation": "Vaqtni bildirish uchun songa 「時」(soat) va 「分」(daqiqa) qo'shimchalari qo'shiladi. Savolda 「なんじ」(soat nechchida) ishlatiladi.",
+      "examples": [
+        {"jp": "今 なんじですか。", "translation": "Hozir soat nechchi?"},
+        {"jp": "……7時10分です。", "translation": "...7 soat 10 daqiqa."}
+      ]
+    },
+    {
+      "title": "ГЛАГます / ГЛАГません / ГЛАГました / ГЛАГませんでした",
+      "explanation": "Yapon fe'llari 「ます」qo'shimchasi bilan xushmuomalalik shaklida keladi: hozirgi-kelasi zamon ijobiy (ます), inkor (ません), o'tgan zamon ijobiy (ました), o'tgan zamon inkor (ませんでした).",
+      "examples": [
+        {"jp": "毎朝 6時に おきます。", "translation": "Har kuni ertalab soat 6 da turaman."},
+        {"jp": "きのう べんきょうしました。", "translation": "Kecha dars tayyorladim."},
+        {"jp": "あした はたらきません。", "translation": "Ertaga ishlamayman."}
+      ]
+    },
+    {
+      "title": "СУЩ (vaqt) に ГЛАГ",
+      "explanation": "Aniq vaqtni bildiruvchi otga 「に」zarrachasi qo'shiladi va harakat qaysi vaqtda sodir bo'lishini bildiradi. きょう, あした, きのう kabi so'zlarga 「に」qo'shilmaydi.",
+      "examples": [
+        {"jp": "6時半に おきます。", "translation": "Soat yarim yettida turaman."},
+        {"jp": "きのう べんきょうしました。", "translation": "Kecha dars tayyorladim. (に yo'q)"}
+      ]
+    },
+    {
+      "title": "СУЩ1 から СУЩ2 まで (dan ... gacha)",
+      "explanation": "「から」boshlanish nuqtasini, 「まで」tugash nuqtasini bildiradi. Vaqt yoki joy uchun ishlatilishi mumkin.",
+      "examples": [
+        {"jp": "げつようびから きんようびまで はたらきます。", "translation": "Dushanbadan jumagacha ishlayman."},
+        {"jp": "9時から 6時まで べんきょうします。", "translation": "Soat 9 dan 6 gacha dars tayyorlayman."}
+      ]
+    }
+  ],
+  "practice_items": [
+    {
+      "stage": 4,
+      "type": "fillBlank",
+      "content": {"sentence": "今 なん＿ですか。", "hint": "soat so'rash uchun qo'shimcha"},
+      "correct_answer": "じ"
+    },
+    {
+      "stage": 4,
+      "type": "multipleChoice",
+      "content": {"question": "«Kecha dars tayyorladim» - to'g'ri variantni tanlang:", "options": ["きのう べんきょうします。", "きのう べんきょうしました。", "あした べんきょうしました。", "きのう べんきょうしません。"]},
+      "correct_answer": "きのう べんきょうしました。"
+    },
+    {
+      "stage": 4,
+      "type": "multipleChoice",
+      "content": {"question": "「6時＿ おきます。」to'g'ri zarrachani tanlang:", "options": ["に", "は", "を", "で"]},
+      "correct_answer": "に",
+      "topic_tag": "particle_ni",
+      "mistake_explanation": {
+        "は": "「は」mavzuni bildiradi, bu yerda esa aniq vaqt ko'rsatilyapti, shuning uchun 「に」kerak.",
+        "を": "「を」to'g'ridan-to'g'ri to'ldiruvchi uchun ishlatiladi, vaqt uchun emas.",
+        "で": "「で」joy yoki vosita uchun ishlatiladi, aniq vaqt uchun 「に」ishlatiladi."
+      }
+    },
+    {
+      "stage": 4,
+      "type": "multipleChoice",
+      "content": {"question": "「げつようび＿ きんようびまで はたらきます。」bo'sh joyni to'ldiring:", "options": ["から", "まで", "に", "の"]},
+      "correct_answer": "から"
+    },
+    {
+      "stage": 5,
+      "type": "rearrange",
+      "content": {"words": ["わたしは", "毎朝", "6時に", "おきます"], "instruction": "So'zlarni to'g'ri tartibga tering"},
+      "correct_answer": "わたしは 毎朝 6時に おきます"
+    },
+    {
+      "stage": 5,
+      "type": "rearrange",
+      "content": {"words": ["9時から", "6時まで", "はたらきます"], "instruction": "So'zlarni to'g'ri tartibga tering"},
+      "correct_answer": "9時から 6時まで はたらきます"
+    },
+    {
+      "stage": 6,
+      "type": "openEnded",
+      "content": {"prompt": "Sizning kuningiz qanday o'tishini tasvirlab bering: soat nechida turasiz, ishlaysiz/o'qiysiz va yotasiz."},
+      "correct_answer": null
+    },
+    {
+      "stage": 7,
+      "type": "openEnded",
+      "content": {"prompt": "Ish yoki maktab jadvali haqida qisqa dialog yozing: bir kishi ikkinchisidan ish vaqtini so'raydi."},
+      "correct_answer": null
+    }
+  ],
+  "quiz_questions": [
+    {"question": "«Hozir soat nechchi?» yaponchada qanday bo'ladi?", "options": ["今 なんじですか。", "今 どこですか。", "今 だれですか。", "今 いくらですか。"], "correct_option_index": 0},
+    {"question": "「おきます」ning ma'nosi:", "options": ["Yotmoq", "Turmoq", "Ishlamoq", "O'qimoq"], "correct_option_index": 1},
+    {"question": "O'tgan zamon inkor shakli qaysi?", "options": ["ます", "ました", "ません", "ませんでした"], "correct_option_index": 3},
+    {"question": "「きのう」ning tarjimasi:", "options": ["Ertaga", "Bugun", "Kecha", "Hozir"], "correct_option_index": 2},
+    {"question": "Aniq vaqtga qanday zarracha qo'shiladi?", "options": ["は", "が", "に", "を"], "correct_option_index": 2},
+    {"question": "「げつようび」qaysi kun?", "options": ["Yakshanba", "Dushanba", "Seshanba", "Juma"], "correct_option_index": 1},
+    {"question": "「9時から 6時まで」nima ma'noni bildiradi?", "options": ["9 dan keyin", "9 dan 6 gacha", "6 dan 9 gacha", "9 va 6 da"], "correct_option_index": 1},
+    {"question": "「はたらきます」ning ma'nosi:", "options": ["Dam olmoq", "Ishlamoq", "O'qimoq", "Yozmoq"], "correct_option_index": 1},
+    {"question": "«Ertaga ishlamayman» - to'g'ri gap:", "options": ["あした はたらきます。", "あした はたらきました。", "あした はたらきません。", "きのう はたらきません。"], "correct_option_index": 2},
+    {"question": "「ごご」qaysi vaqtni bildiradi?", "options": ["Tushdan oldin", "Tushdan keyin", "Ertalab erta", "Tun yarmi"], "correct_option_index": 1}
+  ]
+}
