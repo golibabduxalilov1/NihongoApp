@@ -5,13 +5,12 @@ import '../../providers/user_stats_providers.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../core/constants/app_typography.dart';
 import '../flashcard/flashcard_screen.dart';
-import '../speaking/speaking_practice_screen.dart';
 import '../writing/writing_practice_screen.dart';
 import '../listening/listening_practice_screen.dart';
 import '../practice/targeted_practice_screen.dart';
 
 /// Barcha erkin mashq turlarini birlashtiruvchi markaz:
-/// lug'at takrorlash, gapirish (shadowing), yozish (stroke order),
+/// lug'at takrorlash, yozish (stroke order),
 /// va zaif tomonlar bo'yicha maqsadli mashq.
 class PracticeHubScreen extends ConsumerWidget {
   const PracticeHubScreen({super.key});
@@ -83,14 +82,6 @@ class PracticeHubScreen extends ConsumerWidget {
             onTap: () => _openVocabPractice(context, ref),
           ),
           _SkillTile(
-            icon: Icons.mic_rounded,
-            title: 'Talaffuz (shadowing)',
-            subtitle: 'Eshiting, takrorlang, moslikni ko\'ring',
-            color: AppColors.peach,
-            iconColor: AppColors.primaryDark,
-            onTap: () => _openSpeakingPractice(context, ref),
-          ),
-          _SkillTile(
             icon: Icons.brush_rounded,
             title: 'Yozish (hiragana/katakana)',
             subtitle: 'Chiziq tartibi bilan yozishni mashq qiling',
@@ -152,15 +143,6 @@ class PracticeHubScreen extends ConsumerWidget {
     }
   }
 
-  Future<void> _openSpeakingPractice(BuildContext context, WidgetRef ref) async {
-    final lessons = await ref.read(lessonsListProvider.future);
-    final completed = lessons.where((l) => l.isCompleted).toList();
-    final lessonId = completed.isNotEmpty ? completed.first.id : (lessons.isNotEmpty ? lessons.first.id : 1);
-
-    if (context.mounted) {
-      Navigator.push(context, MaterialPageRoute(builder: (_) => SpeakingPracticeScreen(lessonId: lessonId)));
-    }
-  }
 }
 
 class _SkillTile extends StatelessWidget {

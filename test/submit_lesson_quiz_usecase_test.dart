@@ -1,10 +1,10 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:nihongo_manzil/domain/entities/lesson.dart';
-import 'package:nihongo_manzil/domain/entities/vocabulary.dart';
-import 'package:nihongo_manzil/domain/entities/grammar_point.dart';
-import 'package:nihongo_manzil/domain/entities/practice_item.dart';
-import 'package:nihongo_manzil/domain/repositories/lesson_repository.dart';
-import 'package:nihongo_manzil/domain/usecases/submit_lesson_quiz_usecase.dart';
+import 'package:nihongo_comet/domain/entities/lesson.dart';
+import 'package:nihongo_comet/domain/entities/vocabulary.dart';
+import 'package:nihongo_comet/domain/entities/grammar_point.dart';
+import 'package:nihongo_comet/domain/entities/practice_item.dart';
+import 'package:nihongo_comet/domain/repositories/lesson_repository.dart';
+import 'package:nihongo_comet/domain/usecases/submit_lesson_quiz_usecase.dart';
 
 /// Repository'ning soxta (fake) implementatsiyasi — haqiqiy SQLite
 /// kerak emas, faqat use case logikasini izolyatsiyada tekshiramiz.

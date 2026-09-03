@@ -9,7 +9,7 @@ import 'json_lesson_loader.dart';
 /// orqali o'qiladi — bu yerdagi Dart kodida darslik matni saqlanmaydi.
 ///
 /// Bu klass darslardan tashqari qolgan boshlang'ich ma'lumotlarni
-/// (checkpoint, joylashtirish testi, yozuv/gapirish mashqlari uchun
+/// (checkpoint, joylashtirish testi, yozuv mashqlari uchun
 /// umumiy, litsenziyasiz namunalar) ham yuklaydi.
 class SeedDataLoader {
   final DatabaseHelper _dbHelper;
@@ -33,7 +33,6 @@ class SeedDataLoader {
       await _seedCheckpoint(txn);
       await _seedPlacementTest(txn);
       await _seedWritingPractice(txn);
-      await _seedSpeakingPractice(txn);
     });
   }
 
@@ -205,36 +204,4 @@ class SeedDataLoader {
     }
   }
 
-  // ---------------------------------------------------------------------
-  // SPEAKING PRACTICE: 1-dars uchun namuna shadowing/kaiwa elementlari
-  // ---------------------------------------------------------------------
-  Future<void> _seedSpeakingPractice(Transaction txn) async {
-    final items = [
-      {
-        'text': 'はじめまして。よろしく おねがいします。',
-        'romaji': 'Hajimemashite. Yoroshiku onegaishimasu.',
-        'translation': 'Tanishganimdan xursandman. Yaxshi munosabatda bo\'laylik.',
-        'is_kaiwa': 1,
-      },
-      {
-        'text': 'わたしは がくせいです。',
-        'romaji': 'Watashi wa gakusei desu.',
-        'translation': 'Men talabaman.',
-        'is_kaiwa': 0,
-      },
-    ];
-
-    for (var i = 0; i < items.length; i++) {
-      final it = items[i];
-      await txn.insert('speaking_items', {
-        'id': 10000 + i,
-        'lesson_id': 1,
-        'prompt_text': it['text'],
-        'prompt_romaji': it['romaji'],
-        'prompt_translation_uz': it['translation'],
-        'reference_audio_path': null,
-        'is_kaiwa': it['is_kaiwa'],
-      });
-    }
-  }
 }

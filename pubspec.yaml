@@ -1,4 +1,4 @@
-name: nihongo_manzil
+name: nihongo_comet
 description: "Minna no Nihongo asosidagi yapon tili o'rganish ilovasi"
 publish_to: 'none'
 version: 1.0.0+1
@@ -33,7 +33,6 @@ dependencies:
 
   # UI yordamchilari
   percent_indicator: ^4.2.3
-  google_fonts: ^6.2.1
 
 dev_dependencies:
   flutter_test:
@@ -48,3 +47,19 @@ flutter:
   assets:
     - assets/sample_data/
     - assets/sample_data/lessons/
+
+  fonts:
+    - family: Nunito
+      fonts:
+        - asset: assets/fonts/Nunito-VariableFont_wght.ttf
+        - asset: assets/fonts/Nunito-VariableFont_wght.ttf
+          weight: 600
+        - asset: assets/fonts/Nunito-VariableFont_wght.ttf
+          weight: 700
+        - asset: assets/fonts/Nunito-VariableFont_wght.ttf
+          weight: 800
+    - family: Baloo2
+      fonts:
+        - asset: assets/fonts/Baloo2-VariableFont_wght.ttf
+        - asset: assets/fonts/Baloo2-VariableFont_wght.ttf
+          weight: 700

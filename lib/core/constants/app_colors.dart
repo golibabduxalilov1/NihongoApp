@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// Nihongo Manzil dizayn tizimi.
+/// Nihongo Comet dizayn tizimi.
 /// Manba: "kitob + yapon bayrog'i" mockup dizayni (2026-08).
 /// Har bir rang mockupdagi CSS o'zgaruvchisiga mos keladi (izohlarga qarang).
 class AppColors {

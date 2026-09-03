@@ -10,7 +10,7 @@ class DatabaseHelper {
   static Database? _database;
 
   static const int _dbVersion = 2;
-  static const String _dbName = 'nihongo_manzil.db';
+  static const String _dbName = 'nihongo_comet.db';
 
   Future<Database> get database async {
     if (_database != null) return _database!;
@@ -212,31 +212,6 @@ class DatabaseHelper {
       )
     ''');
 
-    // === 4. Talaffuz va gapirish mashqi (shadowing) ===
-    await db.execute('''
-      CREATE TABLE IF NOT EXISTS speaking_items (
-        id INTEGER PRIMARY KEY,
-        lesson_id INTEGER NOT NULL,
-        prompt_text TEXT NOT NULL,
-        prompt_romaji TEXT,
-        prompt_translation_uz TEXT NOT NULL,
-        reference_audio_path TEXT,
-        is_kaiwa INTEGER NOT NULL DEFAULT 0,
-        FOREIGN KEY (lesson_id) REFERENCES lessons (id) ON DELETE CASCADE
-      )
-    ''');
-
-    await db.execute('''
-      CREATE TABLE IF NOT EXISTS speaking_attempts (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        speaking_item_id INTEGER NOT NULL,
-        recognized_text TEXT,
-        similarity_score REAL,
-        attempted_at TEXT NOT NULL,
-        FOREIGN KEY (speaking_item_id) REFERENCES speaking_items (id) ON DELETE CASCADE
-      )
-    ''');
-
     // === 5. Onboarding va joylashtirish testi ===
     await db.execute('''
       CREATE TABLE IF NOT EXISTS placement_test_questions (
@@ -288,7 +263,6 @@ class DatabaseHelper {
     await db.execute('CREATE INDEX IF NOT EXISTS idx_grammar_srs_next_review ON grammar_srs_state (next_review_date)');
     await db.execute('CREATE INDEX IF NOT EXISTS idx_mistake_lesson ON mistake_log (lesson_id)');
     await db.execute('CREATE INDEX IF NOT EXISTS idx_mistake_topic ON mistake_log (topic_tag)');
-    await db.execute('CREATE INDEX IF NOT EXISTS idx_speaking_lesson ON speaking_items (lesson_id)');
     await db.execute('CREATE INDEX IF NOT EXISTS idx_writing_lesson ON writing_practice (lesson_id)');
 
     // user_stats uchun boshlang'ich (yagona) qatorni yaratamiz, agar yo'q bo'lsa
@@ -321,8 +295,6 @@ class DatabaseHelper {
     await db.delete('writing_practice');
     await db.delete('placement_test_results');
     await db.delete('placement_test_questions');
-    await db.delete('speaking_attempts');
-    await db.delete('speaking_items');
     await db.delete('mistake_log');
     await db.delete('grammar_srs_state');
     await db.delete('user_stats');

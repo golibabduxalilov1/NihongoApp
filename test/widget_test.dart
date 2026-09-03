@@ -7,12 +7,12 @@
 
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:nihongo_manzil/main.dart';
+import 'package:nihongo_comet/main.dart';
 
 void main() {
   testWidgets('App builds without throwing', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const NihongoManzilApp());
+    await tester.pumpWidget(const NihongoCometApp());
 
     // Verify that the app renders without any uncaught errors.
     expect(tester.takeException(), isNull);

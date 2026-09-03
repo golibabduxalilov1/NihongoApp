@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:nihongo_manzil/core/srs/sm2_algorithm.dart';
-import 'package:nihongo_manzil/domain/entities/srs_state.dart';
+import 'package:nihongo_comet/core/srs/sm2_algorithm.dart';
+import 'package:nihongo_comet/domain/entities/srs_state.dart';
 
 void main() {
   group('Sm2Algorithm', () {

@@ -1,23 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'data/datasources/seed_data_loader.dart';
 import 'presentation/screens/onboarding/onboarding_screen.dart';
 import 'core/constants/app_colors.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
-  // MUHIM (offline-first va oq-ekran muammosining oldini olish):
-  // google_fonts paketi standart holda shriftni internetdan yuklashga
-  // urinadi. Agar qurilma internetga ulanmagan bo'lsa yoki so'rov sekin
-  // bo'lsa, bu birinchi render paytida ilovani "qotirib qo'yishi" mumkin
-  // (oq ekran, hech narsa bosilmaydi). Shu qatorlar orqali tarmoq orqali
-  // yuklashni butunlay o'chirib, faqat qurilmada mavjud shriftlarga
-  // (agar assets/fonts orqali paketlangan bo'lsa) yoki standart Material
-  // shriftiga tushishni majburlaymiz — ilova hech qachon shrift kutib
-  // osilib qolmaydi.
-  GoogleFonts.config.allowRuntimeFetching = false;
 
   String? startupError;
 
@@ -33,17 +21,17 @@ Future<void> main() async {
     startupError = e.toString();
   }
 
-  runApp(ProviderScope(child: NihongoManzilApp(startupError: startupError)));
+  runApp(ProviderScope(child: NihongoCometApp(startupError: startupError)));
 }
 
-class NihongoManzilApp extends StatelessWidget {
+class NihongoCometApp extends StatelessWidget {
   final String? startupError;
-  const NihongoManzilApp({super.key, this.startupError});
+  const NihongoCometApp({super.key, this.startupError});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Nihongo Manzil',
+      title: 'Nihongo Comet',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,

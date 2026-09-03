@@ -5,7 +5,6 @@ import '../../data/repositories/checkpoint_repository_impl.dart';
 import '../../data/repositories/user_stats_repository_impl.dart';
 import '../../data/repositories/mistake_repository_impl.dart';
 import '../../data/repositories/grammar_srs_repository_impl.dart';
-import '../../data/repositories/speaking_repository_impl.dart';
 import '../../data/repositories/placement_test_repository_impl.dart';
 import '../../data/repositories/writing_practice_repository_impl.dart';
 import '../../domain/repositories/lesson_repository.dart';
@@ -14,7 +13,6 @@ import '../../domain/repositories/checkpoint_repository.dart';
 import '../../domain/repositories/user_stats_repository.dart';
 import '../../domain/repositories/mistake_repository.dart';
 import '../../domain/repositories/grammar_srs_repository.dart';
-import '../../domain/repositories/speaking_repository.dart';
 import '../../domain/repositories/placement_test_repository.dart';
 import '../../domain/repositories/writing_practice_repository.dart';
 import '../../domain/usecases/get_lessons_usecase.dart';
@@ -52,10 +50,6 @@ final mistakeRepositoryProvider = Provider<MistakeRepository>((ref) {
 
 final grammarSrsRepositoryProvider = Provider<GrammarSrsRepository>((ref) {
   return GrammarSrsRepositoryImpl();
-});
-
-final speakingRepositoryProvider = Provider<SpeakingRepository>((ref) {
-  return SpeakingRepositoryImpl();
 });
 
 final placementTestRepositoryProvider = Provider<PlacementTestRepository>((ref) {
